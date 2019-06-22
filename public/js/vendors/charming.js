@@ -1,0 +1,54 @@
+function charming(element, options) {
+  options = options || {};
+  element.normalize()
+  var splitRegex = /(\s+)/gm
+
+  var tagName = options.tagName || 'span'
+  var classPrefix = options.classPrefix != null ? options.classPrefix : 'charming charming'
+  var count = 1
+
+  function inject (element) {
+    var parentNode = element.parentNode
+    var string = element.nodeValue
+    var split = splitRegex ? string.split(splitRegex) : string
+    var length = split.length
+    var i = -1
+    while (++i < length) {
+      if(split[i] == " "){
+        continue;
+      }
+      var node = document.createElement(tagName)
+      if (classPrefix) {
+        node.className = classPrefix + count
+        count++
+      }
+      node.appendChild(document.createTextNode(split[i] + '\u00A0'))
+      node.setAttribute('aria-hidden', 'true')
+      parentNode.insertBefore(node, element)
+    }
+    if (string.trim() !== '') {
+      parentNode.setAttribute('aria-label', string)
+    }
+    parentNode.removeChild(element)
+  }
+
+  ;(function traverse (element) {
+    // `element` is itself a text node.
+    if (element.nodeType === 3) {
+      return inject(element)
+    }
+
+    // `element` has a single child text node.
+    var childNodes = Array.prototype.slice.call(element.childNodes) // static array of nodes
+    var length = childNodes.length
+    if (length === 1 && childNodes[0].nodeType === 3) {
+      return inject(childNodes[0])
+    }
+
+    // `element` has more than one child node.
+    var i = -1
+    while (++i < length) {
+      traverse(childNodes[i])
+    }
+  })(element)
+}

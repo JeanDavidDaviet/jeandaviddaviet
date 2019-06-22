@@ -1,0 +1,39 @@
+.navbar {
+  flex: 1;
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    list-style: none;
+
+    @media only screen and (max-width: 48em) {
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  &__item {
+    padding: 5px 0;
+
+    @media only screen and (min-width: 30em) {
+      // 480px
+      display: inline-block;
+      margin-right: 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: $font-dark-color;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      color: $light-blue;
+    }
+  }
+}
