@@ -5,9 +5,9 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="PostsRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\PageRepository")
  */
-class Posts
+class Page
 {
     /**
      * @ORM\Id()
@@ -27,19 +27,14 @@ class Posts
     private $slug;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @ORM\Column(type="text")
      */
     private $content;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @ORM\Column(type="boolean", options={"default": 0})
      */
-    private $created_at;
-
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $updated_at;
+    private $published;
 
     public function getId(): ?int
     {
@@ -75,33 +70,21 @@ class Posts
         return $this->content;
     }
 
-    public function setContent(?string $content): self
+    public function setContent(string $content): self
     {
         $this->content = $content;
 
         return $this;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getPublished(): ?bool
     {
-        return $this->created_at;
+        return $this->published;
     }
 
-    public function setCreatedAt(\DateTimeInterface $created_at): self
+    public function setPublished(bool $published): self
     {
-        $this->created_at = $created_at;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updated_at;
-    }
-
-    public function setUpdatedAt(\DateTimeInterface $updated_at): self
-    {
-        $this->updated_at = $updated_at;
+        $this->published = $published;
 
         return $this;
     }

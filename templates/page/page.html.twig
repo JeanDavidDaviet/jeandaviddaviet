@@ -1,15 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ slug }} – Jean-David Daviet{% endblock %}
+{% block title %}{{ page.slug }} – Jean-David Daviet{% endblock %}
 
 {% block header %}<a href="{{ path('index') }}">Jean-David Daviet</a>{% endblock %}
 
 {% block body %}
 
-    <div class="wrapper--narrow"><div class="row">
-
-        {{ slug }}
-
-    </div></div>
+    <div class="wrapper--narrow">
+        <div class="article__title">
+            <h1 itemprop="name">{{ page.title }}</h1>
+        </div>
+        <div class="article__content">{{ page.content | raw }}</div>
+    </div>
 
 {% endblock %}

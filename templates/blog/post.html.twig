@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ post.title }} – Jean-David Daviet{% endblock %}
+
+{% block header %}<a href="{{ path('index') }}">Jean-David Daviet</a>{% endblock %}
+
+{% block body %}
+
+    <article itemtype="https://schema.org/Article">
+        <div class="article__title"><h1 itemprop="name">{{ post.title }}</h1></div>
+        <div class="article__content">{{ post.content }}</div>
+    </article>
+
+{% endblock %}

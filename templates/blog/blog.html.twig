@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog – Jean-David Daviet{% endblock %}
+
+{% block header %}<h1><a href="{{ path('index') }}">Jean-David Daviet</a></h1>{% endblock %}
+
+{% block body %}
+
+    {% for post in posts %}
+
+        <article itemtype="https://schema.org/Article">
+            <h2 itemprop="name">
+                <a href="{{ path('post', { slug: post.slug }) }}">{{ post.title }}</a>
+                <time datetime="{{ post.createdAt | date("Y-m-d\\TH:i:s") }}" itemprop="datePublished"><small> - {{ post.createdAt | date("d/m/Y") }}</small></time>
+            </h2>
+            {% if post.dossier %}<p><a href="{{ path('dossier', { slug: post.dossier.slug }) }}">Dossier&nbsp;: {{ post.dossier.name }}</a></p>{% endif %}
+            <p>{{ post.excerpt }}</p>
+        </article>
+
+    {% endfor %}
+
+{% endblock %}

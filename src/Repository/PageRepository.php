@@ -2,26 +2,25 @@
 
 namespace App\Repository;
 
-use App\Entity\Post;
-use App\Entity\Posts;
+use App\Entity\Page;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 
 /**
- * @method Posts|null find($id, $lockMode = null, $lockVersion = null)
- * @method Posts|null findOneBy(array $criteria, array $orderBy = null)
- * @method Posts[]    findAll()
- * @method Posts[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
+ * @method Page|null find($id, $lockMode = null, $lockVersion = null)
+ * @method Page|null findOneBy(array $criteria, array $orderBy = null)
+ * @method Page[]    findAll()
+ * @method Page[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class PostsRepository extends ServiceEntityRepository
+class PageRepository extends ServiceEntityRepository
 {
     public function __construct(RegistryInterface $registry)
     {
-        parent::__construct($registry, Posts::class);
+        parent::__construct($registry, Page::class);
     }
 
     // /**
-    //  * @return Post[] Returns an array of Post objects
+    //  * @return Page[] Returns an array of Page objects
     //  */
     /*
     public function findByExampleField($value)
@@ -38,7 +37,7 @@ class PostsRepository extends ServiceEntityRepository
     */
 
     /*
-    public function findOneBySomeField($value): ?Post
+    public function findOneBySomeField($value): ?Page
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.exampleField = :val')
