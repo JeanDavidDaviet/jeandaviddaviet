@@ -1,31 +1,15 @@
 .catchphrase {
   position: relative;
   display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media screen and (min-width: 480px) {
-    height: 400px;
-    margin-bottom: 150px;
-  }
-
-  &__shape {
-    position: absolute;
-
-    @media screen and (max-width: 479px) {
-      transform: scaleY(1.7);
-    }
-  }
 
   &__quote {
-    position: relative;
     margin: 0;
   }
 
-  &__text {
+  &__text,
+  &__author {
     font-size: 1.2em;
     font-weight: 300;
-    text-align: center;
     margin: 0 0 20px;
     overflow: hidden;
   }
@@ -33,7 +17,6 @@
   &__footer {
     display: flex;
     align-items: center;
-    justify-content: center;
   }
 
   &__image {
@@ -48,16 +31,6 @@
   }
 
   &__author {
-    font-weight: 400;
-    font-size: 2rem;
     margin: 0;
-
-    @media screen and (max-width: 1199px) {
-      font-size: 3vw;
-    }
-
-    @media screen and (max-width: 559px) {
-      font-size: 1rem;
-    }
   }
 }

@@ -1,17 +1,13 @@
 .header {
   margin-bottom: 50px;
 
-  // @media only screen and (min-width: 48em){
-  //   margin-bottom: 150px;
-  // }
-
   & > div > a {
     display: block;
     font-size: 2.25rem;
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     padding: 15px 0;
 
     &:hover,
@@ -27,7 +23,7 @@ h1 {
   a {
     color: #333;
     text-decoration: none;
-    transition: all .3s ease;
+    transition: color 0.3s ease;
 
     &:hover,
     &:focus {

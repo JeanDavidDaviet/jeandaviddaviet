@@ -1,30 +1,5 @@
-@mixin animated-reset {
-  transition: transform .75s cubic-bezier(.65,.02,.23,1), opacity .75s ease;
-
-  &.animated {
-    transform: translateY(0) rotate(0);
-    opacity: 1;
-  }
-}
-
-
-.charming {
-  display: inline-block;
-  transform: translateY(100%) rotate(5deg);
-  transform-origin: 0 0;
-  opacity: 0;
-  position: relative;
-  z-index: 1;
-
-  @include animated-reset;
-  @for $i from 1 to 30 {
-    &#{$i} {
-      transition-delay: $i * 0.02s;
-    }
-  }
-}
-
-.reveal-opacity {
-  opacity: 0;
-  @include animated-reset;
+.full-bleed {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
 }

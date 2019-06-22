@@ -1,7 +1,7 @@
 .code-block {
   background: #333;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  // padding-top: 30px;
+  // padding-bottom: 30px;
   margin: 30px 0;
 
   pre {
@@ -36,7 +36,6 @@
     &.comment {
       color: #6f6f58;
     }
-
   }
 
   .line-numbers-rows {
@@ -72,6 +71,4 @@
       }
     }
   }
-
-
 }

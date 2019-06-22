@@ -6,17 +6,21 @@
 
 {% block body %}
 
-    {% for post in posts %}
+    <section class="wrapper--narrow">
 
-        <article itemtype="https://schema.org/Article">
-            <h2 itemprop="name">
-                <a href="{{ path('post', { slug: post.slug }) }}">{{ post.title }}</a>
-                <time datetime="{{ post.createdAt | date("Y-m-d\\TH:i:s") }}" itemprop="datePublished"><small> - {{ post.createdAt | date("d/m/Y") }}</small></time>
-            </h2>
-            {% if post.dossier %}<p><a href="{{ path('dossier', { slug: post.dossier.slug }) }}">Dossier&nbsp;: {{ post.dossier.name }}</a></p>{% endif %}
-            <p>{{ post.excerpt }}</p>
-        </article>
+        {% for post in posts %}
 
-    {% endfor %}
+            <article itemtype="https://schema.org/Article" class="article__content">
+                <h2 itemprop="name">
+                    <a href="{{ path('post', { slug: post.slug }) }}">{{ post.title }}</a>
+                    <time datetime="{{ post.createdAt | date("Y-m-d\\TH:i:s") }}" itemprop="datePublished"><small> - {{ post.createdAt | date("d/m/Y") }}</small></time>
+                </h2>
+                {% if post.dossier %}<p class="article__dossier"><a href="{{ path('dossier', { slug: post.dossier.slug }) }}">Dossier&nbsp;: {{ post.dossier.name }}</a></p>{% endif %}
+                <p>{{ post.excerpt }}</p>
+            </article>
+
+        {% endfor %}
+
+    </section>
 
 {% endblock %}

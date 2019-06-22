@@ -6,9 +6,11 @@
 
 {% block body %}
 
-    <article itemtype="https://schema.org/Article">
-        <div class="article__title"><h1 itemprop="name">{{ post.title }}</h1></div>
-        <div class="article__content">{{ post.content }}</div>
-    </article>
+    <section class="wrapper--narrow">
+        <article itemtype="https://schema.org/Article">
+            <div class="article__title"><h1 itemprop="name">{{ post.title }}</h1></div>
+            <div class="article__content">{{ post.content | raw }}</div>
+        </article>
+    </section>
 
 {% endblock %}
