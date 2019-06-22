@@ -51,6 +51,11 @@ class Post
      */
     private $dossier;
 
+    /**
+     * @ORM\Column(type="boolean", options={"default"=0})
+     */
+    private $published;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -136,6 +141,18 @@ class Post
     public function setDossier(?Dossier $dossier): self
     {
         $this->dossier = $dossier;
+
+        return $this;
+    }
+
+    public function getPublished(): ?bool
+    {
+        return $this->published;
+    }
+
+    public function setPublished(bool $published): self
+    {
+        $this->published = $published;
 
         return $this;
     }

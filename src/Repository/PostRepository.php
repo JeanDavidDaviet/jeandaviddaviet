@@ -22,6 +22,7 @@ class PostRepository extends ServiceEntityRepository
     public function getPostsOrderedByDate($order = 'ASC')
     {
         return $this->createQueryBuilder('p')
+            ->andWhere('p.published = 1')
             ->orderBy('p.created_at', $order)
             ->getQuery()
             ->getResult()
