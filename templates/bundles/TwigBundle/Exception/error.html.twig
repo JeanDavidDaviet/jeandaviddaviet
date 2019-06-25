@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Erreur {{ status_code }} – Jean-David Daviet{% endblock %}
+
+{% block header %}<a href="{{ path('index') }}">Jean-David Daviet</a>{% endblock %}
+
+{% block body %}
+
+    <div class="wrapper--narrow"><div class="row">
+
+        <h1>Il y a eu un problème</h1>
+
+        <p>Veuillez m'excuser du problème recontré sur le site. (<small>{{ status_code }} {{ status_text }}</small>)</p>
+
+        <p>Un rapport d'incident m'a été envoyé pour je que puisse corriger le problème le plus rapidement possible</p>
+
+    </div></div>
+
+{% endblock %}
