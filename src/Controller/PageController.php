@@ -17,7 +17,7 @@ class PageController extends AbstractController
     }
 
     /**
-     * @Route("/{slug}", name="page", requirements={"slug"="^(?!portfolio.*$).*"})
+     * @Route("/{slug}", name="page", requirements={"slug"="^(?![portfolio|admin].*$).*"})
      */
     public function page($slug)
     {

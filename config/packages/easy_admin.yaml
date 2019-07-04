@@ -1,0 +1,10 @@
+easy_admin:
+    entities:
+        Post:
+            class: App\Entity\Post
+        Dossier:
+            class: App\Entity\Dossier
+        Page:
+            class: App\Entity\Page
+        Portfolio:
+            class: App\Entity\Portfolio
