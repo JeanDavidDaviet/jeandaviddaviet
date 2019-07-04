@@ -21,12 +21,14 @@
     &.operator {
       color: #fb006c;
     }
+    &.class-name,
     &.attr-name,
     &.selector {
       color: #7dcf00;
     }
     &.attr-value,
-    &.string {
+    &.string,
+     {
       color: #d9cb61;
     }
     &.function,
@@ -35,6 +37,18 @@
     }
     &.comment {
       color: #6f6f58;
+    }
+    &.keyword {
+      color: #ee076d;
+    }
+    &.parameter{
+      color: #f5931c;
+      & > .token {
+        color: white;
+      }
+    }
+    &.number {
+      color: #b181fc;
     }
   }
 
