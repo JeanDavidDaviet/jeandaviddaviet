@@ -23,6 +23,7 @@ class PostRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('p')
             ->andWhere('p.published = 1')
+            ->andWhere('p.isNote = 0')
             ->orderBy('p.created_at', $order)
             ->getQuery()
             ->getResult()

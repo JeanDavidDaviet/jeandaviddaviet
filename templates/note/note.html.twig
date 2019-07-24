@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ note.title }} – Jean-David Daviet{% endblock %}
+
+{% block header %}<a href="{{ path('index') }}">Jean-David Daviet</a>{% endblock %}
+
+{% block body %}
+
+    <section class="wrapper--narrow">
+        <article itemtype="https://schema.org/Article">
+            <div class="article__title"><h1 itemprop="name">{{ note.title }}</h1></div>
+            <div class="article__content">{{ note.content | raw }}</div>
+        </article>
+    </section>
+
+{% endblock %}

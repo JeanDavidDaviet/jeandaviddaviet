@@ -56,6 +56,11 @@ class Post
      */
     private $published;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isNote;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -160,5 +165,17 @@ class Post
     public function __toString(): string
     {
         return $this->getTitle();
+    }
+
+    public function getIsNote(): ?bool
+    {
+        return $this->isNote;
+    }
+
+    public function setIsNote(bool $isNote): self
+    {
+        $this->isNote = $isNote;
+
+        return $this;
     }
 }
