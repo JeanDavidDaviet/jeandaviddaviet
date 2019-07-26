@@ -18,15 +18,4 @@ class PostRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Post::class);
     }
-
-    public function getPostsOrderedByDate($order = 'ASC')
-    {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.published = 1')
-            ->andWhere('p.isNote = 0')
-            ->orderBy('p.created_at', $order)
-            ->getQuery()
-            ->getResult()
-            ;
-    }
 }

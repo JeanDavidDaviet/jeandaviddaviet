@@ -59,7 +59,7 @@ class Post
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isNote;
+    private $is_note;
 
     public function getId(): ?int
     {
@@ -169,12 +169,12 @@ class Post
 
     public function getIsNote(): ?bool
     {
-        return $this->isNote;
+        return $this->is_note;
     }
 
-    public function setIsNote(bool $isNote): self
+    public function setIsNote(bool $is_note): self
     {
-        $this->isNote = $isNote;
+        $this->is_note = $is_note;
 
         return $this;
     }

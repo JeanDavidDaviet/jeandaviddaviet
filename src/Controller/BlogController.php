@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Dossier;
 use App\Entity\Post;
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,7 +15,14 @@ class BlogController extends AbstractController
      */
     public function index()
     {
-        $posts = $this->getDoctrine()->getRepository(Post::class)->getPostsOrderedByDate('DESC');
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        if($user instanceof User){
+            $posts = $this->getDoctrine()->getRepository(Post::class)->findBy(['is_note' => false], [ 'created_at' => 'DESC']);
+        }else {
+            $posts = $this->getDoctrine()->getRepository(Post::class)->findBy(['published' => true, 'is_note' => false], [ 'created_at' => 'DESC']);
+        }
+
         if(!$posts){
             throw $this->createNotFoundException('Aucun article trouvé');
         }

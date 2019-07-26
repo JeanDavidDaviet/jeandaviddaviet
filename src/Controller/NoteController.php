@@ -14,7 +14,7 @@ class NoteController extends AbstractController
      */
     public function index()
     {
-        $notes = $this->getDoctrine()->getRepository(Post::class)->findBy([ 'isNote' => true, 'published' => true ]);
+        $notes = $this->getDoctrine()->getRepository(Post::class)->findBy([ 'isNote' => true, 'published' => true ], ['createdAt' => 'DESC']);
 
         if(!$notes){
             throw $this->createNotFoundException('Aucune note trouvé');
