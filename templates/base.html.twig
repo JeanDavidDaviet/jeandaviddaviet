@@ -31,7 +31,7 @@
                     <li class="navbar__item"><a href="{{ path('page', { slug: 'developpement-sites-wordpress' }) }}" class="navbar__link">WordPress</a></li>
                     {#<li class="navbar__item"><a href="{{ path('page', { slug: 'developpement-sites-woocommerce' }) }}" class="navbar__link">WooCommerce</a></li>#}
                     <li class="navbar__item"><a href="{{ path('blog') }}" class="navbar__link">Blog</a></li>
-                    <li class="navbar__item"><a href="{{ path('notes') }}" class="navbar__link">Notes</a></li>
+                    {#<li class="navbar__item"><a href="{{ path('notes') }}" class="navbar__link">Notes</a></li>#}
                     {% if is_granted('ROLE_ADMIN') %}<li class="navbar__item"><a href="{{ path('portfolio') }}" class="navbar__link">Portfolio</a></li>{% endif %}
                 </ul>
             </nav>

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Post;
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,7 +15,13 @@ class NoteController extends AbstractController
      */
     public function index()
     {
-        $notes = $this->getDoctrine()->getRepository(Post::class)->findBy([ 'isNote' => true, 'published' => true ], ['createdAt' => 'DESC']);
+        $user = $this->get('security.token_storage')->getToken()->getUser();
+
+        if($user instanceof User){
+          $notes = $this->getDoctrine()->getRepository(Post::class)->findBy(['is_note' => true], ['created_at' => 'DESC']);
+        }else {
+          $notes = $this->getDoctrine()->getRepository(Post::class)->findBy(['is_note' => true, 'published' => true ], ['created_at' => 'DESC']);
+        }
 
         if(!$notes){
             throw $this->createNotFoundException('Aucune note trouvé');
