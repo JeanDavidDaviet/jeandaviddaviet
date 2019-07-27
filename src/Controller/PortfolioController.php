@@ -8,30 +8,37 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PortfolioController extends AbstractController
 {
-    // public function index()
-    // {
-    //     $portfolios = $this->getDoctrine()->getRepository(Portfolio::class)->findAll();
+    /**
+     * @Route("/portfolio", name="portfolio")
+     */
+    public function index()
+    {
+        $portfolios = $this->getDoctrine()->getRepository(Portfolio::class)->findAll();
 
-    //     if(!$portfolios){
-    //         throw $this->createNotFoundException('Aucun projet trouvé');
-    //     }
+        if(!$portfolios){
+            throw $this->createNotFoundException('Aucun projet trouvé');
+        }
 
-    //     return $this->render('portfolio/portfolio.html.twig', [
-    //         'portfolios' => $portfolios,
-    //     ]);
-    // }
-    // public function projet($slug)
-    // {
-    //     $projet = $this->getDoctrine()->getRepository(Portfolio::class)->findOneBy([
-    //         'slug' => $slug
-    //     ]);
+        return $this->render('portfolio/portfolio.html.twig', [
+            'portfolios' => $portfolios,
+        ]);
+    }
 
-    //     if(!$projet){
-    //         throw $this->createNotFoundException('Aucun projet trouvé');
-    //     }
+    /**
+     * @Route("/projet/{slug}", name="projet")
+     */
+    public function projet($slug)
+    {
+        $projet = $this->getDoctrine()->getRepository(Portfolio::class)->findOneBy([
+            'slug' => $slug
+        ]);
 
-    //     return $this->render('portfolio/projet.html.twig', [
-    //         'projet' => $projet,
-    //     ]);
-    // }
+        if(!$projet){
+            throw $this->createNotFoundException('Aucun projet trouvé');
+        }
+
+        return $this->render('portfolio/projet.html.twig', [
+            'projet' => $projet,
+        ]);
+    }
 }
