@@ -22,3 +22,19 @@ easy_admin:
             class: App\Entity\Page
         Portfolio:
             class: App\Entity\Portfolio
+            form:
+                fields:
+                    - title
+                    - slug
+                    - link
+                    - { property: 'updated_at', type_options: { widget: 'single_text' } }
+                    # - { property: 'image', template: 'image.html.twig' }
+                    - { property: 'imageFile', type: 'vich_file' }
+            list:
+                fields:
+                    - id
+                    - title
+                    - slug
+                    - link
+                    - { property: 'updated_at', type_options: { widget: 'single_text' } }
+                    - { property: 'image', template: 'portfolio/image.html.twig', base_path: '%app.path.portfolio_images%' }
