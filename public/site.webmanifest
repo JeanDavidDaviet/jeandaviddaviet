@@ -22,10 +22,5 @@
     "sizes": "216x216",
     "type": "image/png",
     "density": 3
-  }, {
-    "src": "img/icons/logo@4x.png",
-    "sizes": "288x288",
-    "type": "image/png",
-    "density": 4
   }]
 }
