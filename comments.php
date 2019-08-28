@@ -37,38 +37,20 @@
   </div>
 
   <?php if ( have_comments() ) : ?>
-
     <ol class="comments__list"><?php wp_list_comments( array( 'walker' => new Jdd_Walker_Comment(), 'short_ping' => true, 'style' => 'ol' ) ); ?></ol>
-    <div class="comments__form">
-      <?php
-        comment_form(
-          array(
-            'id_form' => 'comments__form',
-            'class_submit' => 'btn',
-            'logged_in_as' => null,
-            'title_reply'  => null
-          )
-        );
-      ?>
-    </div>
-
-  <?php
-
-  else : ?>
-
-    <div class="comments__form">
-      <?php
-        comment_form(
-          array(
-            'class_submit' => 'btn',
-            'id_form' => 'comments__form',
-            'logged_in_as' => null,
-            'title_reply'  => null
-          )
-        );
-      ?>
-    </div>
-
   <?php endif; ?>
+
+  <div class="comments__form">
+    <?php
+      comment_form(
+        array(
+          'id_form' => 'comments__form',
+          'class_submit' => 'btn',
+          'logged_in_as' => null,
+          'title_reply'  => null
+        )
+      );
+    ?>
+  </div>
 
 </div>

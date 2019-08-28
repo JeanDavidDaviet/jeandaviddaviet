@@ -11,6 +11,8 @@ remove_action('wp_head', 'wp_shortlink_wp_head');
 remove_action('wp_head', 'rest_output_link_wp_head');
 add_filter('sanitize_file_name', 'remove_accents' );
 
+require_once get_template_directory() . '/inc/Jdd_Walker_Comment.php';
+
 function wp_remove_vers( $src ) {
   global $wp_version;
   parse_str(parse_url($src, PHP_URL_QUERY), $query);

@@ -25,7 +25,7 @@
 <body>
     <header class="wrapper--narrow header">
         <div class="row">
-            <h1><a href="<?php echo home_url(); ?>">Jean-David Daviet</a></h1>
+            <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>">Jean-David Daviet</a><?php if(is_front_page()): ?></h1><?php endif; ?>
             <nav class="navbar">
                 <ul class="navbar__list row">
                     <li class="navbar__item"><a href="<?php echo home_url('developpement-sites-wordpress'); ?>" class="navbar__link">WordPress</a></li>
