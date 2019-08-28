@@ -1,0 +1,26 @@
+{
+  "name": "jeandaviddaviet",
+  "version": "3.0.0",
+  "description": "Personnal website of Jean-David Daviet",
+  "main": "src/js/index.js",
+  "dependencies": {
+    "normalize-svg-coords": "^1.0.7",
+    "onchange": "^5.2.0",
+    "prismjs": "^1.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "highlight": "cd prism; npx onchange -i -k input.* -- node node.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeanDavidDaviet/jeandaviddaviet.git"
+  },
+  "author": "JeanDavidDaviet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeanDavidDaviet/jeandaviddaviet/issues"
+  },
+  "homepage": "https://github.com/JeanDavidDaviet/jeandaviddaviet#readme"
+}

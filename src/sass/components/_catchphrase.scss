@@ -1,0 +1,33 @@
+.catchphrase {
+  position: relative;
+  display: flex;
+
+  &__quote {
+    margin: 0;
+  }
+
+  &__text,
+  &__author {
+    font-size: 1.2em;
+    font-weight: 300;
+    margin: 0 0 20px;
+    overflow: hidden;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+  }
+
+  &__image {
+    border-radius: 50px;
+    width: 100%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  &__author {
+    margin: 0;
+  }
+}
