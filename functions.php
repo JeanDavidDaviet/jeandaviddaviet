@@ -47,12 +47,12 @@ function add_theme_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
-add_action( 'init', 'register_my_menu' );
-function register_my_menu() {
-    register_nav_menus( array(
-        'primary' => 'Menu Principal'
-    ) );
-}
+// add_action( 'init', 'register_my_menu' );
+// function register_my_menu() {
+//     register_nav_menus( array(
+//         'primary' => 'Menu Principal'
+//     ) );
+// }
 
 function portfolio_cpt() {
     $args = array(
