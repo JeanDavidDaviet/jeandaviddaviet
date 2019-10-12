@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // remove_filter('the_content', 'wpautop');
 remove_filter('the_excerpt', 'wpautop');
@@ -41,18 +41,11 @@ add_filter( 'comments_open', 'jce_remove_attachment_comments', 10 , 2 );
 
 
 function add_theme_scripts() {
-    wp_deregister_script( 'jquery' );
-    wp_enqueue_style( 'style', get_template_directory_uri() . "/dist/css/main.min.css", array(), false);
-    // wp_enqueue_script( 'script', get_template_directory_uri() . "/script.min.js", array(), false, true);
+  wp_deregister_script( 'jquery' );
+  wp_enqueue_style( 'style', get_template_directory_uri() . "/dist/css/main.min.css", array(), false);
+  wp_enqueue_script( 'script', get_template_directory_uri() . "/dist/js/script.min.js", array(), false, true);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
-
-// add_action( 'init', 'register_my_menu' );
-// function register_my_menu() {
-//     register_nav_menus( array(
-//         'primary' => 'Menu Principal'
-//     ) );
-// }
 
 function portfolio_cpt() {
     $args = array(
