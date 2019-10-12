@@ -1,0 +1,30 @@
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #2b2e2f;
+    color: #e6e6e6;
+  }
+  .header > div > a,
+  h1 a,
+  .navbar__link {
+    color: #e6e6e6;
+  }
+  .btn,
+  .btn:hover {
+    color: #2f2f2f;
+    background-color: #dcdcdc;
+  }
+  .article__content time small {
+    color: #d0d0d0;
+  }
+  .code-block {
+    background: #1d1d1d;
+  }
+
+  .comments__form input[type=email],
+  .comments__form input[type=text],
+  .comments__form input[type=url],
+  .comments__form textarea {
+    background-color: #1c1c1c;
+    border: 1px solid #505050;
+  }
+}
