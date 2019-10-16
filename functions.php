@@ -1,6 +1,6 @@
 <?php
 
-// remove_filter('the_content', 'wpautop');
+add_filter( 'jetpack_honor_dnt_header_for_stats', '__return_true' );
 remove_filter('the_excerpt', 'wpautop');
 remove_action('wp_head', 'print_emoji_detection_script', 7);
 remove_action('wp_print_styles', 'print_emoji_styles');
@@ -43,7 +43,7 @@ add_filter( 'comments_open', 'jce_remove_attachment_comments', 10 , 2 );
 function add_theme_scripts() {
   wp_deregister_script( 'jquery' );
   wp_enqueue_style( 'style', get_template_directory_uri() . "/dist/css/main.min.css", array(), false);
-  wp_enqueue_script( 'script', get_template_directory_uri() . "/dist/js/script.min.js", array(), false, true);
+  // wp_enqueue_script( 'script', get_template_directory_uri() . "/dist/js/script.min.js", array(), false, true);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
