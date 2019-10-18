@@ -29,11 +29,9 @@
             <nav class="navbar">
                 <ul class="navbar__list row">
                     <li class="navbar__item"><a href="<?php echo home_url('developpement-sites-wordpress'); ?>" class="navbar__link">WordPress</a></li>
-                    <?php /* ?><li class="navbar__item"><a href="{{ path('page', { slug: 'developpement-sites-woocommerce' }) }}" class="navbar__link">WooCommerce</a></li><?php */ ?>
                     <li class="navbar__item"><a href="<?php echo home_url('blog'); ?>" class="navbar__link">Blog</a></li>
                     <li class="navbar__item"><a href="<?php echo home_url('dossiers'); ?>" class="navbar__link">Dossiers</a></li>
-                    <?php /* ?><li class="navbar__item"><a href="{{ path('notes" class="navbar__link">Notes</a></li><?php */ ?>
-                    <?php /* if(get_current_user_id() === 1): ?><li class="navbar__item"><a href="{{ path('portfolio" class="navbar__link">Portfolio</a></li><?php endif; */ ?>
+                    <li class="navbar__item"><a href="<?php echo home_url('news'); ?>" class="navbar__link">News</a></li>
                 </ul>
             </nav>
         </div>

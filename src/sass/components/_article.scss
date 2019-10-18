@@ -20,7 +20,13 @@
     }
   }
 }
-
+.article__title h1 {
+  padding-bottom: 0;
+}
+.article__meta {
+  margin-bottom: 30px;
+  display: block;
+}
 article {
   // .article__title {
   //   position: relative;
