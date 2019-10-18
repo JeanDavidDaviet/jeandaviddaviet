@@ -2,7 +2,7 @@
 
 <section class="wrapper--narrow">
 
-  <?php foreach(get_categories() as $categorie): ?>
+  <?php foreach(get_categories(array('exclude' => array(1 /* Articles */ , 22 /* News */))) as $categorie): ?>
 
   <article itemscope itemtype="https://schema.org/Article" class="article__content">
     <h2 itemprop="name">
