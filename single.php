@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php
+
+$year = (int)substr($post->post_date, 0, 4);
+$monthnum = (int)substr($post->post_date, 5, 2);
+if(get_query_var('year') !== $year || get_query_var('monthnum') !== $monthnum){
+  $post_new_permalink = home_url("news/{$year}/{$monthnum}/{$post->post_name}");
+  wp_redirect($post_new_permalink, 301);exit;
+}
+
+get_header();
+
+?>
 
 
   <?php if(have_posts()): while(have_posts()): the_post(); ?>

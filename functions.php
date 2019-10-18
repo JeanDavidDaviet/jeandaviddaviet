@@ -1,5 +1,10 @@
 <?php
 
+function custom_rewrite_basic() {
+  add_rewrite_rule('^news/([0-9]{4})/([0-9]{2})/([a-zA-Z0-9\-]+)\/?$', 'index.php?post_type=post&name=$matches[3]&year=$matches[1]&monthnum=$matches[2]', 'top');
+}
+add_action('init', 'custom_rewrite_basic');
+
 add_filter( 'jetpack_honor_dnt_header_for_stats', '__return_true' );
 remove_filter('the_excerpt', 'wpautop');
 remove_action('wp_head', 'print_emoji_detection_script', 7);
