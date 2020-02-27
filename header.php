@@ -23,7 +23,8 @@
     <?php wp_head(); ?>
 </head>
 <body>
-    <header class="wrapper--narrow header">
+  <div class="wrapper--narrow">
+    <header class="header">
         <div class="row">
             <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>">Jean-David Daviet</a><?php if(is_front_page()): ?></h1><?php endif; ?>
             <nav class="navbar">
