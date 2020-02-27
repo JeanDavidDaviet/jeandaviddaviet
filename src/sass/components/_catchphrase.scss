@@ -1,6 +1,12 @@
 .catchphrase {
-  position: relative;
-  display: flex;
+  padding: 20px;
+  background: transparentize($light-blue, .7);
+
+  @include xs {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+  }
 
   &__quote {
     margin: 0;
@@ -8,10 +14,13 @@
 
   &__text,
   &__author {
-    font-size: 1.2em;
+    font-size: 1rem;
     font-weight: 300;
-    margin: 0 0 20px;
-    overflow: hidden;
+    margin: 0 0 5px;
+
+    @include xs {
+      font-size: 1.2rem;
+    }
   }
 
   &__footer {
@@ -24,10 +33,18 @@
     width: 100%;
     width: 50px;
     height: 50px;
+    float: left;
+    margin-bottom: 10px;
     margin-right: 10px;
+
+    @include xs {
+      margin-right: 20px;
+      align-self: center;
+    }
   }
 
   &__author {
     margin: 0;
+    font-size: .9em;
   }
 }

@@ -1,5 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
 @import "abstracts/variables";
-@import "abstracts/functions";
 
 @import "base/reset";
 @import "base/typography";
