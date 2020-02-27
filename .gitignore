@@ -5,8 +5,7 @@ package-lock.json
 dploy.yaml
 composer.lock
 prepros-6.config
-dist/css/
 dist/js
-dist/fonts/
-src/css/
+*/font/
+*/css/
 prism/

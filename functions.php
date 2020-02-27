@@ -41,7 +41,7 @@ add_filter( 'comments_open', 'jce_remove_attachment_comments', 10 , 2 );
 
 function add_theme_scripts() {
   // wp_deregister_script( 'jquery' );
-  wp_enqueue_style( 'style', get_template_directory_uri() . "/dist/css/main.min.css", array(), false);
+  wp_enqueue_style( 'style', get_template_directory_uri() . "/dist/css/main.css", array(), false);
   // wp_enqueue_script( 'script', get_template_directory_uri() . "/dist/js/script.min.js", array(), false, true);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
