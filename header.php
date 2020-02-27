@@ -31,7 +31,6 @@
                     <li class="navbar__item"><a href="<?php echo home_url('developpement-sites-wordpress'); ?>" class="navbar__link">WordPress</a></li>
                     <li class="navbar__item"><a href="<?php echo home_url('blog'); ?>" class="navbar__link">Blog</a></li>
                     <li class="navbar__item"><a href="<?php echo home_url('dossiers'); ?>" class="navbar__link">Dossiers</a></li>
-                    <li class="navbar__item"><a href="<?php echo home_url('news'); ?>" class="navbar__link">News</a></li>
                 </ul>
             </nav>
         </div>
