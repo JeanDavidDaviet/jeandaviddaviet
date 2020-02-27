@@ -1,11 +1,12 @@
+$logoFontSize: 2rem;
 .header {
   margin-bottom: 50px;
 
   & > div > a {
     display: block;
-    font-size: 2.25rem;
+    font-size: $logoFontSize;
     text-decoration: none;
-    color: #333;
+    color: $dark;
     font-weight: bold;
     transition: all 0.3s ease;
     padding: 15px 0;
@@ -21,9 +22,10 @@ h1 {
   margin: 0;
 
   a {
-    color: #333;
+    color: $dark;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: $logoFontSize;
 
     &:hover,
     &:focus {
