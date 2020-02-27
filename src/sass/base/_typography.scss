@@ -34,6 +34,11 @@ body {
   @media only screen and (min-width: 22.5em) {
     font-size: $base-font-size;
   }
+
+  @include dark {
+    background: $dark;
+    color: $light;
+  }
 }
 h1 {
   font-size: 1.4em;
@@ -68,6 +73,10 @@ h1 {
   time small {
     color: #777;
     font-size: 40%;
+
+    @include dark {
+      color: #d0d0d0;
+    }
   }
   pre {
     margin: 0 0 1.45rem;

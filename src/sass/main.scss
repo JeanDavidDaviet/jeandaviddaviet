@@ -9,8 +9,8 @@ html, body {
 @import "abstracts/variables";
 
 @import "base/reset";
-@import "base/typography";
 @import "base/utilities";
+@import "base/typography";
 
 @import "components/catchphrase";
 @import "components/section-homepage";
@@ -26,8 +26,6 @@ html, body {
 @import "layout/header";
 @import "layout/footer";
 @import "pages/portfolio";
-
-@import "base/dark";
 
 @media (min-width: 1400px) {
 }

@@ -28,8 +28,10 @@
   }
 
   &__link {
-    color: $font-dark-color;
+    color: $dark;
     text-decoration: none;
+
+    @extend %dark_scheme_color;
 
     &:hover,
     &:focus {

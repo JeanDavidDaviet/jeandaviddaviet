@@ -94,6 +94,12 @@
   }
 }
 
+@mixin dark {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
 @mixin hover {
   &:hover,
   &:focus {
@@ -130,6 +136,12 @@
   bottom: 0;
   left: 0;
   right: 0;
+}
+
+%dark_scheme_color {
+  @include dark {
+    color: $light;
+  }
 }
 
 .animated {

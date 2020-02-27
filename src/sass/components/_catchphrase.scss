@@ -2,6 +2,10 @@
   padding: 20px;
   background: transparentize($light-blue, .7);
 
+  @include dark {
+    background: rgba(74, 124, 154, 0.3);
+  }
+
   @include xs {
     display: flex;
     align-items: center;

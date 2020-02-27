@@ -1,8 +1,10 @@
 .code-block {
   background: #333;
-  // padding-top: 30px;
-  // padding-bottom: 30px;
   margin: 30px 0;
+
+  @include dark {
+    background: #1d1d1d;
+  }
 
   pre {
     counter-reset: linenumber;

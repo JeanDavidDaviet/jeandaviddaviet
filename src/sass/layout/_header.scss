@@ -10,6 +10,8 @@
     transition: all 0.3s ease;
     padding: 15px 0;
 
+    @extend %dark_scheme_color;
+
     &:hover,
     &:focus {
       color: $light-blue;
@@ -24,6 +26,8 @@ h1 {
     color: #333;
     text-decoration: none;
     transition: color 0.3s ease;
+
+    @extend %dark_scheme_color;
 
     &:hover,
     &:focus {
