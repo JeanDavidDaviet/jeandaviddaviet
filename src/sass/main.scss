@@ -27,26 +27,13 @@ html, body {
 @import "layout/footer";
 @import "pages/portfolio";
 
-@media (min-width: 1400px) {
-}
+.homepage-last {
+  h3 {
+    margin-top: 50px;
+  }
 
-@media (max-width: 1399px) {
-}
-
-@media (min-width: 1200px) {
-}
-
-@media (max-width: 1199px) {
-}
-
-@media (min-width: 992px) {
-}
-
-@media (max-width: 991px) {
-}
-
-@media (min-width: 768px) {
-}
-
-@media (max-width: 767px) {
+  a {
+    color: $light-blue;
+    text-decoration: none;
+  }
 }
