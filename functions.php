@@ -9,6 +9,7 @@ remove_action('wp_head', 'wlwmanifest_link');
 remove_action('wp_head', 'wp_generator');
 remove_action('wp_head', 'wp_shortlink_wp_head');
 remove_action('wp_head', 'rest_output_link_wp_head');
+remove_action('wp_head', 'wp_oembed_add_host_js');
 add_filter('sanitize_file_name', 'remove_accents' );
 
 require_once get_template_directory() . '/inc/Jdd_Walker_Comment.php';
@@ -41,6 +42,7 @@ add_filter( 'comments_open', 'jce_remove_attachment_comments', 10 , 2 );
 
 function add_theme_scripts() {
   // wp_deregister_script( 'jquery' );
+  wp_dequeue_style( 'wp-block-library' );
   wp_enqueue_style( 'style', get_template_directory_uri() . "/dist/css/main.css", array(), false);
   // wp_enqueue_script( 'script', get_template_directory_uri() . "/dist/js/script.min.js", array(), false, true);
 }
