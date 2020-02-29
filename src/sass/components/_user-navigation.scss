@@ -13,7 +13,7 @@
     }
   }
 
-  &__item {
+  .page_item {
     padding: 5px 0;
 
     @media only screen and (min-width: 30em) {
@@ -27,7 +27,7 @@
     }
   }
 
-  &__link {
+  .page_item a {
     color: $dark;
     text-decoration: none;
 
