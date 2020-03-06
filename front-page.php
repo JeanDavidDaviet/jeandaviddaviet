@@ -8,18 +8,25 @@
     </blockquote>
   </div>
 
+  <?php $articles = new WP_Query(['post_type' => 'post', 'posts_per_page' => 3]); if ( $articles->have_posts() ) : ?>
   <div class="homepage-last">
     <h3>Les derniers articles</h3>
-    <p>Qu’est-ce que la spécificité CSS ?</p>
-    <p>Lire un fichier .db (SQLite) et afficher son contenu</p>
-    <p>Ajouter TypeScript à un project ReactJS existant</p>
-    <p><a href="#">Plus d'articles</a></p>
-
-    <h3>Les derniers dossiers</h3>
-    <p>Aujourdhui j'ai appris</p>
-    <p>Comprendre les sites internet</p>
-    <p>CSS</p>
-    <p><a href="#">Plus de dossiers</a></p>
+    <?php while ( $articles->have_posts() ) : $articles->the_post(); ?>
+    <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+    <?php endwhile; ?>
+    <p><a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="more">Plus d'articles</a></p>
   </div>
+  <?php endif; ?>
+
+  <?php $dossiers = get_categories(array('exclude' => array(1 /* Articles */ , 22 /* News */))); if( !empty($dossiers) ) : ?>
+  <div class="homepage-last">
+    <h3>Les derniers dossiers</h3>
+    <?php foreach($dossiers as $dossier): ?>
+    <p><a href="<?php echo get_category_link($dossier->term_id); ?>"><?php echo $dossier->name; ?></a></p>
+    <?php endforeach; ?>
+    <p><a href="/dossiers" class="more">Plus de dossiers</a></p>
+    <p><a href="#"></a></p>
+  </div>
+  <?php endif; ?>
 
 <?php get_footer(); ?>

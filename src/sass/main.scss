@@ -26,14 +26,3 @@ html, body {
 @import "layout/header";
 @import "layout/footer";
 @import "pages/portfolio";
-
-.homepage-last {
-  h3 {
-    margin-top: 50px;
-  }
-
-  a {
-    color: $light-blue;
-    text-decoration: none;
-  }
-}

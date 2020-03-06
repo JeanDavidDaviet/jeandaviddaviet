@@ -100,7 +100,8 @@
   }
 }
 
-@mixin hover {
+@mixin hover($transition: 'all .3s') {
+  transition: #{$transition};
   &:hover,
   &:focus {
     @content;
