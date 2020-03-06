@@ -25,12 +25,15 @@
 <body>
   <div class="wrapper--narrow">
     <header class="header">
-      <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>">Jean-David Daviet</a><?php if(is_front_page()): ?></h1><?php endif; ?>
-      <nav class="navbar">
-          <ul class="navbar__list row">
-              <li class="navbar__item"><a href="<?php echo home_url('developpement-sites-wordpress'); ?>" class="navbar__link">WordPress</a></li>
-              <li class="navbar__item"><a href="<?php echo home_url('blog'); ?>" class="navbar__link">Blog</a></li>
-              <li class="navbar__item"><a href="<?php echo home_url('dossiers'); ?>" class="navbar__link">Dossiers</a></li>
-          </ul>
-      </nav>
+        <div class="row">
+            <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>">Jean-David Daviet</a><?php if(is_front_page()): ?></h1><?php endif; ?>
+            <?php wp_nav_menu([
+              'menu'              => 'primary',
+              'theme_location'    => 'primary',
+              'depth'             => 2,
+              'container'         => 'nav',
+              'menu_class'        => 'navbar',
+              'items_wrap'        => '<ul class="navbar__list">%3$s</ul>',
+            ]); ?>
+        </div>
     </header>

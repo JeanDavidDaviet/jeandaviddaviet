@@ -47,3 +47,10 @@ function add_theme_scripts() {
   // wp_enqueue_script( 'script', get_template_directory_uri() . "/dist/js/script.min.js", array(), false, true);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
+
+add_action( 'init', 'pm_register_my_menu' );
+function pm_register_my_menu() {
+    register_nav_menus( array(
+        'primary' => 'Menu Principal'
+    ) );
+}
