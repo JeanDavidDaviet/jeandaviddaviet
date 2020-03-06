@@ -2,7 +2,7 @@ $logoFontSize: 2rem;
 .header {
   margin-bottom: 50px;
 
-  & > div > a {
+  & > a {
     display: block;
     font-size: $logoFontSize;
     text-decoration: none;
@@ -10,6 +10,8 @@ $logoFontSize: 2rem;
     font-weight: bold;
     transition: all 0.3s ease;
     padding: 15px 0;
+
+    @extend %dark_scheme_color;
 
     &:hover,
     &:focus {
@@ -26,6 +28,8 @@ h1 {
     text-decoration: none;
     transition: color 0.3s ease;
     font-size: $logoFontSize;
+
+    @extend %dark_scheme_color;
 
     &:hover,
     &:focus {

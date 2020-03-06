@@ -25,14 +25,12 @@
 <body>
   <div class="wrapper--narrow">
     <header class="header">
-        <div class="row">
-            <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>">Jean-David Daviet</a><?php if(is_front_page()): ?></h1><?php endif; ?>
-            <nav class="navbar">
-                <ul class="navbar__list row">
-                    <li class="navbar__item"><a href="<?php echo home_url('developpement-sites-wordpress'); ?>" class="navbar__link">WordPress</a></li>
-                    <li class="navbar__item"><a href="<?php echo home_url('blog'); ?>" class="navbar__link">Blog</a></li>
-                    <li class="navbar__item"><a href="<?php echo home_url('dossiers'); ?>" class="navbar__link">Dossiers</a></li>
-                </ul>
-            </nav>
-        </div>
+      <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>">Jean-David Daviet</a><?php if(is_front_page()): ?></h1><?php endif; ?>
+      <nav class="navbar">
+          <ul class="navbar__list row">
+              <li class="navbar__item"><a href="<?php echo home_url('developpement-sites-wordpress'); ?>" class="navbar__link">WordPress</a></li>
+              <li class="navbar__item"><a href="<?php echo home_url('blog'); ?>" class="navbar__link">Blog</a></li>
+              <li class="navbar__item"><a href="<?php echo home_url('dossiers'); ?>" class="navbar__link">Dossiers</a></li>
+          </ul>
+      </nav>
     </header>

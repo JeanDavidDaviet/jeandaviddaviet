@@ -1,11 +1,11 @@
 .section-homepage {
   width: 50vw;
-  
+
   &__image,
   &__content {
     margin-bottom: 50px;
   }
-  
+
   &__image {
     text-align: center;
   }
@@ -15,4 +15,27 @@
       order: 2;
     }
   }
+}
+
+.homepage-last {
+  h3 {
+    margin-top: 50px;
+  }
+  a {
+    color: $dark;
+    text-decoration: none;
+
+    @include hover {
+      color: $light-blue;
+    }
+
+    &.more {
+      color: $light-blue;
+
+      @include hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
 }

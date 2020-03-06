@@ -31,6 +31,8 @@
     color: $dark;
     text-decoration: none;
 
+    @extend %dark_scheme_color;
+
     &:hover,
     &:focus {
       color: $light-blue;
