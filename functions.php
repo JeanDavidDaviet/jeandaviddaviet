@@ -12,8 +12,9 @@ remove_action('wp_head', 'rest_output_link_wp_head');
 remove_action('wp_head', 'wp_oembed_add_host_js');
 add_filter('sanitize_file_name', 'remove_accents' );
 
-require_once get_template_directory() . '/inc/Jdd_Walker_Comment.php';
-require_once get_template_directory() . '/inc/cpt.php';
+require_once 'inc/menu_walker.php';
+require_once 'inc/Jdd_Walker_Comment.php';
+require_once 'inc/cpt.php';
 
 function wp_remove_vers( $src ) {
   global $wp_version;

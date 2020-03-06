@@ -1,7 +1,7 @@
 .navbar {
   flex: 1;
 
-  ul {
+  &__list {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -13,7 +13,7 @@
     }
   }
 
-  .page_item {
+  &__item {
     padding: 5px 0;
 
     @media only screen and (min-width: 30em) {
@@ -27,7 +27,7 @@
     }
   }
 
-  .page_item a {
+  &__link {
     color: $dark;
     text-decoration: none;
 

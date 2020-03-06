@@ -30,10 +30,10 @@
             <?php wp_nav_menu([
               'menu'              => 'primary',
               'theme_location'    => 'primary',
-              'depth'             => 2,
               'container'         => 'nav',
-              'menu_class'        => 'navbar',
-              'items_wrap'        => '<ul class="navbar__list">%3$s</ul>',
+              'container_class'   => 'navbar',
+		          'items_wrap'        => '<ul class="navbar__list">%3$s</ul>',
+              'walker'            => new Jdd_Menu_Walker()
             ]); ?>
         </div>
     </header>
