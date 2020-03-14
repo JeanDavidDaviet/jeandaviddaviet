@@ -1,4 +1,5 @@
-<?php get_header(); ?>
+<?php /* Template Name: Dossiers */
+get_header(); ?>
 
   <?php foreach(get_categories(array('exclude' => array(1 /* Articles */ , 22 /* News */))) as $categorie): ?>
 

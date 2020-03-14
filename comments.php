@@ -33,7 +33,7 @@
 <div class="comments'; ?>">
 
   <div class="<?php echo $discussion->responses > 0 ? 'comments-title-wrap' : 'comments-title-wrap no-responses'; ?>">
-    <h2 class="comments__title"><?php echo have_comments() ? 'Rejoindre la conversation' : 'Laisser un commentaire'; ?></h2>
+    <h2 class="comments__title"><?php echo have_comments() ? __('Rejoindre la conversation', 'mep') : __('Laisser un commentaire', 'jdd'); ?></h2>
   </div>
 
   <?php if ( have_comments() ) : ?>

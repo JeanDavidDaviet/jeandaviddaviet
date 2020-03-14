@@ -26,7 +26,7 @@
   <div class="wrapper--narrow">
     <header class="header">
         <div class="row">
-            <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>">Jean-David Daviet</a><?php if(is_front_page()): ?></h1><?php endif; ?>
+            <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>"><?php _e("Jean-David Daviet", "jdd"); ?></a><?php if(is_front_page()): ?></h1><?php endif; ?>
             <?php wp_nav_menu([
               'menu'              => 'primary',
               'theme_location'    => 'primary',

@@ -12,6 +12,8 @@ remove_action('wp_head', 'rest_output_link_wp_head');
 remove_action('wp_head', 'wp_oembed_add_host_js');
 add_filter('sanitize_file_name', 'remove_accents' );
 
+load_theme_textdomain('jdd', get_template_directory() . '/languages');
+
 require_once 'inc/menu_walker.php';
 require_once 'inc/Jdd_Walker_Comment.php';
 require_once 'inc/cpt.php';

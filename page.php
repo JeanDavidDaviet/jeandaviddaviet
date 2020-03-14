@@ -8,7 +8,7 @@
     <div class="article__content"><?php the_content(); ?></div>
 
     <div class="article__contact">
-      <a href="mailto:contact@jeandaviddaviet.fr" class="btn">Contactez-moi&nbsp;!</a>
+      <a href="mailto:contact@jeandaviddaviet.fr" class="btn"><?php _e("Contactez-moi&nbsp;!", "jdd"); ?></a>
     </div>
 
   <?php endwhile; endif; ?>
