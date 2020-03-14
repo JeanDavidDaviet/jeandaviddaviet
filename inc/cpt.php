@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 // function news_cpt() {
 //     $args = array(
@@ -39,17 +39,28 @@
 // add_filter( 'post_type_link', 'wpd_pg_review_permalinks', 10, 2 );
 
 function portfolio_cpt() {
-    $args = array(
-      'public' => true,
-      'label'  => 'Portfolio',
-      'show_in_rest' => true,
-      'supports' => array( 'title', 'editor', 'thumbnail')
-    );
-    register_post_type( 'portfolio', $args );
+  $args = array(
+    'public' => true,
+    'label'  => 'Portfolio',
+    'show_in_rest' => true,
+    'supports' => array( 'title', 'editor', 'thumbnail')
+  );
+  register_post_type( 'portfolio', $args );
 }
 add_action( 'init', 'portfolio_cpt' );
 
-add_theme_support( 'post-thumbnails', array( 'portfolio' ) );
+function link_cpt() {
+    $args = array(
+      'public' => true,
+      'has_archive' => 'links',
+      'label'  => 'Link',
+      'show_in_rest' => true,
+      'supports' => array( 'title', 'editor'),
+      'taxonomies' => array( 'post_tag' )
+    );
+    register_post_type( 'link', $args );
+}
+add_action( 'init', 'link_cpt' );
 
 function projet_init() {
   register_taxonomy(
