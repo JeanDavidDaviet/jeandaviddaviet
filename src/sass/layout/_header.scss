@@ -2,7 +2,7 @@ $logoFontSize: 2rem;
 .header {
   margin-bottom: 50px;
 
-  & > a {
+  & > .row > a {
     display: block;
     font-size: $logoFontSize;
     text-decoration: none;
