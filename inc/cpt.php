@@ -38,6 +38,17 @@
 // }
 // add_filter( 'post_type_link', 'wpd_pg_review_permalinks', 10, 2 );
 
+function etude_cpt() {
+  $args = array(
+    'public' => true,
+    'label'  => 'Etudes',
+    'show_in_rest' => true,
+    'supports' => array( 'title', 'editor')
+  );
+  register_post_type( 'etude', $args );
+}
+add_action( 'init', 'etude_cpt' );
+
 function portfolio_cpt() {
   $args = array(
     'public' => true,
