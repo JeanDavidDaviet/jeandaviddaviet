@@ -8,7 +8,7 @@
     </blockquote>
   </div>
 
-  <?php $articles = new WP_Query(['post_type' => 'post', 'posts_per_page' => 3]); if ( $articles->have_posts() ) : ?>
+  <?php $articles = new WP_Query(['post_type' => 'post', 'posts_per_page' => 3, 'category__not_in' => array( 22, 62 ) ]); if ( $articles->have_posts() ) : ?>
   <div class="homepage-last">
     <h3><?php _e("Les derniers articles", "jdd"); ?></h3>
     <?php while ( $articles->have_posts() ) : $articles->the_post(); ?>
