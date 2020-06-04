@@ -4,6 +4,7 @@
   "description": "Personnal website of Jean-David Daviet",
   "main": "src/js/index.js",
   "dependencies": {
+    "tiny-slider": "^2.9.2",
     "xstate": "^4.10.0"
   },
   "devDependencies": {

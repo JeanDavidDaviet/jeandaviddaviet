@@ -1,6 +1,7 @@
 .catchphrase {
   padding: 20px;
   background: transparentize($light-blue, .7);
+  margin-bottom: 50px;
 
   @include dark {
     background: rgba(74, 124, 154, 0.3);

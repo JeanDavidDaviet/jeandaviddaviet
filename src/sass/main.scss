@@ -6,6 +6,7 @@ html, body {
   overflow-x: hidden;
 }
 
+@import "../../node_modules/tiny-slider/src/tiny-slider.scss";
 @import "abstracts/variables";
 
 @import "base/reset";
@@ -22,5 +23,6 @@ html, body {
 @import "components/pagination";
 @import "components/user-navigation";
 @import "components/wpblocks";
+@import "components/testimony";
 @import "layout/header";
 @import "layout/footer";
