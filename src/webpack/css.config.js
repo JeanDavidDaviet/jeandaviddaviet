@@ -3,8 +3,6 @@ const webpack = require('webpack');
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const postcssPresetEnv = require('postcss-preset-env');
-// const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-// Fix main.js (https://github.com/webpack-contrib/mini-css-extract-plugin/issues/151)
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
 
 const devMode = process.argv.indexOf('development') !== -1; // In development mode ?
@@ -94,14 +92,6 @@ const cssConfig = {
   },
   optimization: {},
   plugins: [
-    // new OptimizeCSSAssetsPlugin({
-    //   assetNameRegExp: /\.theme\.css$/g,
-    //   cssProcessor: require('cssnano'),
-    //   cssProcessorPluginOptions: {
-    //     preset: ['default', { discardComments: { removeAll: true } }],
-    //   },
-    //   canPrint: true
-    // }),
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       filename: 'main.css',
@@ -111,11 +101,5 @@ const cssConfig = {
     }),
   ],
 };
-
-// if (!devMode) {
-//   cssConfig.plugins.push(
-//     new OptimizeCSSAssetsPlugin()
-//   );
-// }
 
 module.exports = cssConfig;

@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const jsConfig = {
   entry: {
@@ -34,7 +35,10 @@ const jsConfig = {
     $: '$',
     jquery: 'jQuery',
   },
-  plugins: [new MinifyPlugin()],
+  plugins: [
+    new MinifyPlugin(),
+    new CleanWebpackPlugin(),
+  ],
   resolve: {
     extensions: ['.ts', '.js'],
   },
