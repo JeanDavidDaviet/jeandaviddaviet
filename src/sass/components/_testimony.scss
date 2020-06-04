@@ -28,6 +28,7 @@
   position: absolute;
   z-index: 1;
   outline: none;
+  pointer-events: none;
 
   @include md {
     width: 100%;
@@ -46,6 +47,7 @@
   background: transparentize($light-blue, .5);
   border-radius: 20px;
   fill: white;
+  pointer-events: all;
 
   &:focus {
     outline: auto;
@@ -71,21 +73,24 @@
 }
 .testimony {
   padding-right: 40px;
+
   @include md {
     padding: 0 30px;
   }
 }
-.testimony-content {
+.testimony .wp-block-quote {
   margin: 0;
+
   @include md {
     margin: 0 30px;
   }
-}
-.testimony-quote {
-  display: inline-block;
-  margin-bottom: 10px;
-}
-.testimony-cite {
-  padding-left: 10px;
-  display: inline-block;
+
+  p {
+    display: inline-block;
+    margin: 0 0 10px;
+  }
+  cite {
+    padding-left: 10px;
+    display: inline-block;
+  }
 }

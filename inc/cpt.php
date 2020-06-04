@@ -38,6 +38,18 @@
 // }
 // add_filter( 'post_type_link', 'wpd_pg_review_permalinks', 10, 2 );
 
+function testimony_cpt() {
+  $args = array(
+    'public' => false,
+    'show_ui' => true,
+    'label'  => 'Témoignage',
+    'show_in_rest' => true,
+    'supports' => array( 'title', 'editor')
+  );
+  register_post_type( 'temoignage', $args );
+}
+add_action( 'init', 'testimony_cpt' );
+
 function etude_cpt() {
   $args = array(
     'public' => true,
