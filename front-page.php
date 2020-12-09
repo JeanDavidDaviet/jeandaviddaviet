@@ -1,7 +1,11 @@
 <?php get_header(); ?>
 
   <div class="catchphrase col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
-    <img class="catchphrase__image" src="<?php echo get_template_directory_uri(); ?>/dist/img/jd.png" alt="">
+    <picture class="catchphrase__image">
+      <source type="image/avif" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/jd.avif" alt="">
+      <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/jd.webp" alt="">
+      <img src="<?php echo get_template_directory_uri(); ?>/dist/img/jd.png" alt="">
+    </picture>
     <blockquote class="catchphrase__quote">
       <p class="catchphrase__text"><?php _e("J'aide les organisations de petites et moyennes tailles à développer leur projets internets.", "jdd"); ?></p>
       <p class="catchphrase__author reveal">– <?php _e("Jean-David Daviet", "jdd"); ?></p>
