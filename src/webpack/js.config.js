@@ -1,7 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
-const MinifyPlugin = require("babel-minify-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 
 const jsConfig = {
   entry: {
@@ -9,9 +7,10 @@ const jsConfig = {
       './src/js/index',
     ],
   },
+  devtool: false,
   output: {
     path: path.resolve(__dirname, '../../dist/js'),
-    filename: '[name].js',
+    filename: '[name].min.js',
   },
   module: {
     rules: [
@@ -19,26 +18,17 @@ const jsConfig = {
         test: /\.(ts|js)?$/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: [
-              ['@babel/preset-typescript', { modules: false }],
-            ],
-          },
         },
       },
     ],
   },
   optimization: {
-
+    minimizer: [new TerserPlugin({ extractComments: false })],
   },
   externals: {
-    $: '$',
     jquery: 'jQuery',
   },
-  plugins: [
-    new MinifyPlugin(),
-    new CleanWebpackPlugin(),
-  ],
+  plugins: [],
   resolve: {
     extensions: ['.ts', '.js'],
   },

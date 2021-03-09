@@ -4,7 +4,12 @@
     "outDir": "./assets/js",
     "noImplicitAny": true,
     "module": "es6",
-    "target": "es6",
-    "allowJs": true
+    "target": "es5",
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "importHelpers": true,
+    "removeComments": true,
+    "allowSyntheticDefaultImports": true // besoin pour gsap
   }
 }

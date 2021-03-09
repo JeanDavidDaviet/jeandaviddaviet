@@ -2,6 +2,7 @@
 
 Bienvenue sur le code source du thème du site jeandaviddaviet.fr
 C'est un thème WordPress fait sur mesure et qui a pour but d'évoluer dans le temps.
+Je ne cherche pas à faire le plus beau code, mais juste d'aller au plus simple et de faire un site qui marche.
 
 # Choses à faire
 
@@ -9,9 +10,10 @@ C'est un thème WordPress fait sur mesure et qui a pour but d'évoluer dans le t
 - [x] Ajouter les trois derniers articles sur la homepage
 - [ ] Travailler le design du formulaire de commentaire
 - [x] Refactorer le _dark.scss avec des `include @dark`
-- [ ] Mettre PWA
+- [ ] Permettre de passer le site en mode sombre avec un bouton
+- [ ] Mettre PWA / Service Workers
 - [ ] Etudes de cas
-- [ ] Temoignages clients home page
+- [x] Temoignages clients home page
 - [ ] Pages ecommerce
 - [ ] Menu avec depth > 0
 - [ ] Inscription newsletter
@@ -20,3 +22,8 @@ C'est un thème WordPress fait sur mesure et qui a pour but d'évoluer dans le t
 - [ ] Mettre plus d'interactivite / ( exp webgl ? )
 - [ ] RGPD / Analitycs
 - [ ] A propos / contribs / ...
+- [ ] Webmentions
+- [ ] Ajouter un indicateur de date dépassé pour les vieux articles
+- [ ] Ajouter l'anglais
+- [ ] Rendre plus facile l'insertion de code avec syntax highlighting
+- [ ] Utiliser et mettre à jour Webpack pour les assets

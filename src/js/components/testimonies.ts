@@ -12,6 +12,6 @@ if(testimonies != null && testimonyList.length){
     autoplay: false,
     autoHeight: true,
     nav: false,
-    controlsContainer: testimonies.querySelector('.testimonies-controls')
+    controlsContainer: testimonies.querySelector<HTMLDivElement>('.testimonies-controls') as HTMLDivElement
   });
 }
