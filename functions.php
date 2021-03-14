@@ -11,6 +11,7 @@ remove_action('wp_head', 'wp_shortlink_wp_head');
 remove_action('wp_head', 'rest_output_link_wp_head');
 remove_action('wp_head', 'wp_oembed_add_host_js');
 add_filter('sanitize_file_name', 'remove_accents' );
+add_filter( 'auto_plugin_update_send_email', '__return_false' );
 
 load_theme_textdomain('jdd', get_template_directory() . '/languages');
 
