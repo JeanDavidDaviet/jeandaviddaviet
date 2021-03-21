@@ -29,8 +29,7 @@
       color: #7dcf00;
     }
     &.attr-value,
-    &.string,
-     {
+    &.string {
       color: #d9cb61;
     }
     &.function,
@@ -43,7 +42,7 @@
     &.keyword {
       color: #ee076d;
     }
-    &.parameter{
+    &.parameter {
       color: #f5931c;
       & > .token {
         color: white;

@@ -1,6 +1,6 @@
 .catchphrase {
   padding: 20px;
-  background: transparentize($light-blue, .7);
+  background: transparentize($light-blue, 0.7);
   margin-bottom: 50px;
 
   @include dark {
@@ -55,6 +55,6 @@
 
   &__author {
     margin: 0;
-    font-size: .9em;
+    font-size: 0.9em;
   }
 }

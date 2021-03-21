@@ -5,7 +5,7 @@
     content: "“";
     position: absolute;
     font-size: 15rem;
-    opacity: .15;
+    opacity: 0.15;
     color: $light-blue;
     z-index: -1;
     top: -40px;
@@ -42,9 +42,9 @@
   position: absolute;
   padding: 10px;
   cursor: pointer;
-  transition: all .3s;
+  transition: all 0.3s;
   outline: none;
-  background: transparentize($light-blue, .5);
+  background: transparentize($light-blue, 0.5);
   border-radius: 20px;
   fill: white;
   pointer-events: all;
@@ -54,7 +54,7 @@
   }
 
   &[aria-disabled="true"] {
-    opacity: .2;
+    opacity: 0.2;
     cursor: auto;
   }
 }
