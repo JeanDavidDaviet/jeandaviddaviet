@@ -5,7 +5,7 @@
     	<a href="<?php the_field('link'); ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a>
     	<time datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop="datePublished"><small> - <?php echo get_the_date('d/m/Y'); ?></small></time>
     </h2>
-    <?php the_excerpt(); ?>
+    <?php the_content(); ?>
   </article>
 
 <?php endwhile; endif; ?>
