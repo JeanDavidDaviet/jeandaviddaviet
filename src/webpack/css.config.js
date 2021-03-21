@@ -8,7 +8,7 @@ const cssConfig = {
   entry: './src/sass/main.scss',
   output: {
     path: path.resolve(__dirname, '../../dist/css'),
-    publicPath: path.resolve(__dirname, '../../dist'),
+    publicPath: '../../dist',
   },
   module: {
     rules: [
@@ -35,7 +35,7 @@ const cssConfig = {
           {
             loader: 'file-loader',
             options: {
-              name: '../img/[name].[ext]',
+              name: '/img/[name].[ext]',
             },
           },
         ],
@@ -46,7 +46,7 @@ const cssConfig = {
           {
             loader: 'file-loader',
             options: {
-              name: '../fonts/[name].[ext]',
+              name: '/fonts/[name].[ext]',
             },
           },
         ],
@@ -57,7 +57,7 @@ const cssConfig = {
           {
             loader: 'file-loader',
             options: {
-              name: '../svg/[name].[ext]',
+              name: '/svg/[name].[ext]',
             },
           },
         ],

@@ -75,7 +75,7 @@ add_action( 'init', 'portfolio_cpt' );
 function link_cpt() {
     $args = array(
       'public' => true,
-      'has_archive' => 'links',
+      'has_archive' => 'liens',
       'label'  => 'Link',
       'show_in_rest' => true,
       'supports' => array( 'title', 'editor'),
