@@ -58,3 +58,10 @@ function pm_register_my_menu() {
         'primary' => 'Menu Principal'
     ) );
 }
+
+function sgb_external_scripts() {
+  if( is_admin() ){
+    wp_enqueue_script( 'gutenberg-share', get_template_directory_uri() . "/dist/js/gutenberg-share.min.js", [  'wp-data', 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n', 'jquery' ], filemtime(get_template_directory() . "/dist/js/gutenberg-share.min.js"), true);
+  }
+ }
+ add_action( 'enqueue_block_assets', 'sgb_external_scripts' );
