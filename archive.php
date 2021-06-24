@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="category__description">
+  <div class="category-description">
     <?php echo category_description(); ?>
   </div>
 

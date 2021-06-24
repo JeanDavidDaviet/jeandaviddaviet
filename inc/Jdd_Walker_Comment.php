@@ -16,12 +16,12 @@
         <?php $comment_timestamp = sprintf( __( '%1$s at %2$s', 'twentynineteen' ), get_comment_date( '', $comment ), get_comment_time() ); ?>
         <div class="comment-date"><?php echo $comment_timestamp; ?></div>
       </header>
-  
+
       <?php if ( '0' == $comment->comment_approved ) : ?>
         <p class="comment-awaiting-moderation">Commentaire en attente de modération</p>
       <?php endif; ?>
 
-      <div class="comment__content">
+      <div class="comment-content">
         <?php comment_text(); ?>
       </div>
 

@@ -32,7 +32,7 @@
               'theme_location'    => 'primary',
               'container'         => 'nav',
               'container_class'   => 'navbar',
-		          'items_wrap'        => '<ul class="navbar__list">%3$s</ul>',
+        'items_wrap'        => '<ul class="navbar-list">%3$s</ul>',
               'walker'            => new Jdd_Menu_Walker()
             ]); ?>
         </div>

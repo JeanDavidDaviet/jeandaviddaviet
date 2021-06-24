@@ -1,17 +1,17 @@
 .section-homepage {
   width: 50vw;
 
-  &__image,
-  &__content {
+  &-image,
+  &-content {
     margin-bottom: 50px;
   }
 
-  &__image {
+  &-image {
     text-align: center;
   }
 
   &:nth-child(even) {
-    .section-homepage__image {
+    .section-homepage-image {
       order: 2;
     }
   }

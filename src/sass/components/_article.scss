@@ -22,10 +22,10 @@
     }
   }
 }
-.article__title h1 {
-  padding-bottom: 0;
+.article-title h1 {
+  padding: 0;
 }
-.article__meta {
+.article-meta {
   margin-bottom: 30px;
   display: block;
 }
@@ -39,8 +39,8 @@ article {
       text-decoration: underline;
     }
   }
-  .article__content > ul,
-  .article__content > ol {
+  .article-content > ul,
+  .article-content > ol {
     box-sizing: border-box;
     list-style: none;
     position: relative;
@@ -57,13 +57,13 @@ article {
   }
 }
 
-.article__content {
-  .article__dossier {
+.article-content {
+  .article-dossier {
     margin-top: -15px;
   }
 }
 
-.article__contact {
+.article-contact {
   text-align: center;
   margin-bottom: 100px;
 
