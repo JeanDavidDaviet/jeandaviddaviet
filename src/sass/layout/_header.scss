@@ -1,39 +1,21 @@
-$logoFontSize: 2rem;
 .header {
   margin-bottom: 50px;
-
-  & > .row > a {
-    display: block;
-    font-size: $logoFontSize;
-    text-decoration: none;
-    color: $dark;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    padding: 15px 0;
-
-    @extend %dark_scheme_color;
-
-    &:hover,
-    &:focus {
-      color: $light-blue;
-    }
-  }
 }
-h1 {
+.header-title {
+  line-height: var(--base-line-height);
+}
+.header-title-link {
+  display: block;
+  color: var(--dark);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 2rem;
   padding: 15px 0;
-  margin: 0;
+  font-weight: bold;
 
-  a {
-    color: $dark;
-    text-decoration: none;
-    transition: color 0.3s ease;
-    font-size: $logoFontSize;
+  @extend %dark_scheme_color;
 
-    @extend %dark_scheme_color;
-
-    &:hover,
-    &:focus {
-      color: $light-blue;
-    }
+  @include hover {
+    color: var(--light-blue);
   }
 }

@@ -25,15 +25,13 @@
 <body>
   <div class="wrapper--narrow">
     <header class="header">
-        <div class="row">
-            <?php if(is_front_page()): ?><h1><?php endif; ?><a href="<?php echo home_url(); ?>"><?php _e("Jean-David Daviet", "jdd"); ?></a><?php if(is_front_page()): ?></h1><?php endif; ?>
-            <?php wp_nav_menu([
-              'menu'              => 'primary',
-              'theme_location'    => 'primary',
-              'container'         => 'nav',
-              'container_class'   => 'navbar',
+      <?php if(is_front_page()): ?><h1 class="header-title"><?php endif; ?><a href="<?php echo home_url(); ?>" class="header-title-link"><?php _e("Jean-David Daviet", "jdd"); ?></a><?php if(is_front_page()): ?></h1><?php endif; ?>
+      <?php wp_nav_menu([
+        'menu'              => 'primary',
+        'theme_location'    => 'primary',
+        'container'         => 'nav',
+        'container_class'   => 'navbar',
         'items_wrap'        => '<ul class="navbar-list">%3$s</ul>',
-              'walker'            => new Jdd_Menu_Walker()
-            ]); ?>
-        </div>
+        'walker'            => new Jdd_Menu_Walker()
+      ]); ?>
     </header>

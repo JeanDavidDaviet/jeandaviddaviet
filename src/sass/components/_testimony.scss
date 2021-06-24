@@ -2,11 +2,11 @@
   position: relative;
 
   &:before {
-    content: "“";
+    // content: "“";
     position: absolute;
     font-size: 15rem;
     opacity: 0.15;
-    color: $light-blue;
+    color: var(--light-blue);
     z-index: -1;
     top: -40px;
     left: -30px;
@@ -44,7 +44,7 @@
   cursor: pointer;
   transition: all 0.3s;
   outline: none;
-  background: transparentize($light-blue, 0.5);
+  background: var(--transparent-blue);
   border-radius: 20px;
   fill: white;
   pointer-events: all;

@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
   <div class="catchphrase col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
-    <picture class="catchphrase-image">
+    <picture class="catchphrase-picture">
       <source type="image/avif" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/jd.avif" alt="">
       <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/jd.webp" alt="">
-      <img src="<?php echo get_template_directory_uri(); ?>/dist/img/jd.png" alt="">
+      <img class="catchphrase-image" src="<?php echo get_template_directory_uri(); ?>/dist/img/jd.png" alt="">
     </picture>
     <blockquote class="catchphrase-quote">
       <p class="catchphrase-text"><?php _e("J'aide les organisations de petites et moyennes tailles à développer leur projets internets.", "jdd"); ?></p>
@@ -30,22 +30,21 @@
 
   <?php $articles = new WP_Query(['post_type' => 'post', 'posts_per_page' => 3, 'category__not_in' => array( 22, 62 ) ]); if ( $articles->have_posts() ) : ?>
   <div class="homepage-last">
-    <h3><?php _e("Les derniers articles", "jdd"); ?></h3>
+    <h3 class="homepage-last-title"><?php _e("Les derniers articles", "jdd"); ?></h3>
     <?php while ( $articles->have_posts() ) : $articles->the_post(); ?>
-    <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+    <p><a class="homepage-last-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
     <?php endwhile; ?>
-    <p><a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="more"><?php _e("Plus d'articles", "jdd"); ?></a></p>
+    <p><a class="homepage-last-link-more" href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e("Plus d'articles", "jdd"); ?></a></p>
   </div>
   <?php endif; ?>
 
   <?php $dossiers = get_categories(array('exclude' => array(1 /* Articles */ , 22 /* News */))); if( !empty($dossiers) ) : ?>
   <div class="homepage-last">
-    <h3><?php _e("Les derniers dossiers", "jdd"); ?></h3>
+    <h3 class="homepage-last-title"><?php _e("Les derniers dossiers", "jdd"); ?></h3>
     <?php foreach($dossiers as $dossier): ?>
-    <p><a href="<?php echo get_category_link($dossier->term_id); ?>"><?php echo $dossier->name; ?></a></p>
+    <p><a class="homepage-last-link" href="<?php echo get_category_link($dossier->term_id); ?>"><?php echo $dossier->name; ?></a></p>
     <?php endforeach; ?>
-    <p><a href="/dossiers" class="more"><?php _e("Plus de dossiers", "jdd"); ?></a></p>
-    <p><a href="#"></a></p>
+    <p><a href="<?php echo home_url('/dossiers'); ?>" class="homepage-last-link-more"><?php _e("Plus de dossiers", "jdd"); ?></a></p>
   </div>
   <?php endif; ?>
 

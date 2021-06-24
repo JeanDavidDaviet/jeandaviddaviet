@@ -18,7 +18,7 @@
 }
 .wp-block-table {
   border: 1px solid;
-  margin-bottom: 30px;
+  margin: 0 auto 30px;
 
   table {
     border-collapse: collapse;
@@ -26,13 +26,8 @@
   }
 
   td {
-    border: 1px solid;
-    padding: 5px;
-  }
-}
-.wp-block-image {
-  img {
-    max-width: 100%;
+    border: 1px solid #333;
+    padding: 10px;
   }
 }
 .code {
@@ -48,4 +43,23 @@
   margin: 0;
   padding: 0 0 0 20px;
   border-left: 2px solid #439bcf;
+}
+.wp-block-code,
+.code-block {
+  background: #333;
+  color: white;
+  margin: 30px 0;
+  font-size: 1.25rem;
+  line-height: 1.4;
+  border-radius: 8px;
+  overflow: auto;
+  word-wrap: normal;
+  padding: 0;
+
+  @include dark {
+    background: #1d1d1d;
+  }
+}
+.wp-block-code {
+  padding: 16px;
 }

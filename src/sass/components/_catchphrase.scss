@@ -1,6 +1,6 @@
 .catchphrase {
   padding: 20px;
-  background: transparentize($light-blue, 0.7);
+  background: var(--transparent-blue);
   margin-bottom: 50px;
 
   @include dark {
@@ -12,49 +12,47 @@
     align-items: center;
     padding: 30px;
   }
+}
+.catchphrase-quote {
+  margin: 0;
+}
 
-  &-quote {
-    margin: 0;
+.catchphrase-text,
+.catchphrase-author {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0 0 5px;
+
+  @include xs {
+    font-size: 1.2rem;
   }
+}
 
-  &-text,
-  &-author {
-    font-size: 1rem;
-    font-weight: 300;
-    margin: 0 0 5px;
+.catchphrase-footer {
+  display: flex;
+  align-items: center;
+}
 
-    @include xs {
-      font-size: 1.2rem;
-    }
+.catchphrase-picture {
+  border-radius: 50px;
+  width: 100%;
+  width: 50px;
+  height: 50px;
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 10px;
+
+  @include xs {
+    margin-right: 20px;
+    align-self: center;
   }
+}
+.catchphrase-image {
+  max-width: 100%;
+  height: auto;
+}
 
-  &-footer {
-    display: flex;
-    align-items: center;
-  }
-
-  &-image {
-    border-radius: 50px;
-    width: 100%;
-    width: 50px;
-    height: 50px;
-    float: left;
-    margin-bottom: 10px;
-    margin-right: 10px;
-
-    @include xs {
-      margin-right: 20px;
-      align-self: center;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-  }
-
-  &-author {
-    margin: 0;
-    font-size: 0.9em;
-  }
+.catchphrase-author {
+  margin: 0;
+  font-size: 0.9em;
 }

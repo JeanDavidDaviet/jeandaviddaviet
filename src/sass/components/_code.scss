@@ -8,6 +8,8 @@
 
   pre {
     counter-reset: linenumber;
+    margin: 0;
+    padding: 24px 72px;
   }
 
   code {
@@ -55,22 +57,9 @@
 
   .line-numbers-rows {
     position: absolute;
-    // pointer-events: none;
-    // top: 0;
-    // font-size: 100%;
-    // left: -3.8em;
-    // width: 3em;
-    // letter-spacing: -1px;
-    // border-right: 1px solid #999;
     user-select: none;
-    // background: #444;
-    // border: none;
-    // bottom: -50px;
-    left: -33px;
-    top: 0;
-    // padding: 50px 0;
-    // top: -50px;
-    // width: 138px;
+    left: -45px;
+    top: -2px;
 
     span {
       pointer-events: none;
@@ -81,8 +70,6 @@
         content: counter(linenumber);
         color: #91928a;
         display: block;
-        // padding-right: .8em;
-        // text-align: right;
       }
     }
   }

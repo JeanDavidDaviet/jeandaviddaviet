@@ -16,7 +16,6 @@ add_filter( 'auto_plugin_update_send_email', '__return_false' );
 load_theme_textdomain('jdd', get_template_directory() . '/languages');
 
 require_once 'inc/menu_walker.php';
-require_once 'inc/Jdd_Walker_Comment.php';
 require_once 'inc/cpt.php';
 
 function wp_remove_vers( $src ) {
@@ -45,7 +44,7 @@ function jce_remove_attachment_comments( $open, $post_id ) {
 add_filter( 'comments_open', 'jce_remove_attachment_comments', 10 , 2 );
 
 function add_theme_scripts() {
-  // wp_deregister_script( 'jquery' );
+  wp_enqueue_script( 'jquery' );
   wp_dequeue_style( 'wp-block-library' );
   wp_enqueue_style( 'style', get_template_directory_uri() . "/dist/css/main.min.css", [], filemtime(get_template_directory() . "/dist/css/main.min.css"));
   wp_enqueue_script( 'script', get_template_directory_uri() . "/dist/js/main.min.js", [], filemtime(get_template_directory() . "/dist/js/main.min.js"), true);
@@ -57,4 +56,17 @@ function pm_register_my_menu() {
     register_nav_menus( array(
         'primary' => 'Menu Principal'
     ) );
+}
+
+add_action('wp_ajax_get_page_revision', 'get_page_revision');
+add_action('wp_ajax_nopriv_get_page_revision', 'get_page_revision');
+function get_page_revision(){
+  $revision_id = $_GET['revision'];
+  if((int) $revision_id > 0){
+    if(wp_verify_nonce($_GET['_wpnonce'], 'get_revision_' . $revision_id)){
+      header('X-Robots-Tag: noindex');
+      echo apply_filters('the_content', get_post($revision_id)->post_content);
+      die;
+    }
+  }
 }

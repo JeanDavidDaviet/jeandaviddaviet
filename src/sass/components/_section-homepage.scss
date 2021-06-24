@@ -1,40 +1,37 @@
 .section-homepage {
   width: 50vw;
 
-  &-image,
-  &-content {
-    margin-bottom: 50px;
-  }
-
-  &-image {
-    text-align: center;
-  }
-
   &:nth-child(even) {
     .section-homepage-image {
       order: 2;
     }
   }
 }
+.section-homepage-image,
+.section-homepage-content {
+  margin-bottom: 50px;
+}
 
-.homepage-last {
-  h3 {
-    margin-top: 50px;
+.section-homepage-image {
+  text-align: center;
+}
+
+.homepage-last-title {
+  margin-top: 50px;
+}
+.homepage-last-link {
+  color: var(--dark);
+  text-decoration: none;
+
+  @include hover {
+    color: var(--light-blue);
   }
-  a {
-    color: $dark;
-    text-decoration: none;
+}
 
-    @include hover {
-      color: $light-blue;
-    }
+.homepage-last-link-more {
+  color: var(--light-blue);
 
-    &.more {
-      color: $light-blue;
-
-      @include hover {
-        text-decoration: underline;
-      }
-    }
+  @include hover {
+    text-decoration: underline;
   }
 }

@@ -1,8 +1,10 @@
-$dark: #333;
-$light-blue: #439bd0;
+:root {
+  --unit: 8px;
+  --base-font-size: 1.25rem;
+  --base-line-height: 1.6;
 
-$light: #e6e6e6;
-
-$margin-top: 20px;
-$line-height: 1.8;
-$base-font-size: 18px;
+  --dark: #333;
+  --light-blue: #439bd0;
+  --transparent-blue: #c7ddf0;
+  --light-gray: #e6e6e6;
+}

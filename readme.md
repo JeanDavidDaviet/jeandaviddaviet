@@ -11,7 +11,7 @@ Je ne cherche pas à faire le plus beau code, mais juste d'aller au plus simple 
 - [ ] Travailler le design du formulaire de commentaire
 - [x] Refactorer le _dark.scss avec des `include @dark`
 - [ ] Permettre de passer le site en mode sombre avec un bouton
-- [ ] Mettre PWA / Service Workers
+- [x] Mettre PWA / Service Workers
 - [ ] Etudes de cas
 - [x] Temoignages clients home page
 - [ ] Pages ecommerce
@@ -20,10 +20,11 @@ Je ne cherche pas à faire le plus beau code, mais juste d'aller au plus simple 
 - [ ] Liens reseaux sociaux (tw,gh,li)
 - [ ] Page use / mes outils
 - [ ] Mettre plus d'interactivite / ( exp webgl ? )
-- [ ] RGPD / Analitycs
+- [x] RGPD / Analitycs
 - [ ] A propos / contribs / ...
 - [ ] Webmentions
 - [ ] Ajouter un indicateur de date dépassé pour les vieux articles
 - [ ] Ajouter l'anglais
 - [ ] Rendre plus facile l'insertion de code avec syntax highlighting
-- [ ] Utiliser et mettre à jour Webpack pour les assets
+- [x] Utiliser et mettre à jour Webpack pour les assets
+- [ ] Icone pour switcher de dark/light
