@@ -11,10 +11,15 @@ body {
   font-display: swap;
   font-weight: 400;
   line-height: var(--base-line-height);
+  transition: background-color .3s ease;
 
   &.dark {
-    background: var(--dark);
+    background-color: var(--dark);
     color: var(--light-gray);
+  }
+
+  a {
+    transition: color .3s ease;
   }
 }
 h1 {

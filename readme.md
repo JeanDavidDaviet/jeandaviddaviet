@@ -27,4 +27,4 @@ Je ne cherche pas à faire le plus beau code, mais juste d'aller au plus simple 
 - [ ] Ajouter l'anglais
 - [ ] Rendre plus facile l'insertion de code avec syntax highlighting
 - [x] Utiliser et mettre à jour Webpack pour les assets
-- [ ] Icone pour switcher de dark/light
+- [x] Icone pour switcher de dark/light

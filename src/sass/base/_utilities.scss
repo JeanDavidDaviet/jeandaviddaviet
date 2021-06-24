@@ -104,6 +104,12 @@
 }
 
 @mixin hover {
+  @include dark {
+    &:hover,
+    &:focus {
+      @content;
+    }
+  }
   &:hover,
   &:focus {
     @content;

@@ -26,6 +26,10 @@
   @include hover {
     color: var(--light-blue);
   }
+
+  @include dark {
+    color: var(--light-gray);
+  }
 }
 
 .homepage-last-link-more {
