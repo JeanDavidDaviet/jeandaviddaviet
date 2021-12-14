@@ -95,11 +95,15 @@
 }
 
 @mixin dark {
-  .dark & {
-    @content;
+  @media (prefers-color-scheme: light) {
+    body.dark & {
+      @content;
+    }
   }
   @media (prefers-color-scheme: dark) {
-    @content;
+    body:not(.dark) & {
+      @content;
+    }
   }
 }
 
