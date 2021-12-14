@@ -25,10 +25,6 @@
     </script>
     <?php endif; ?>
 
-    <div class="article-contact">
-      <a href="mailto:contact@jeandaviddaviet.fr" class="btn"><?php _e("Contactez-moi&nbsp;!", "jdd"); ?></a>
-    </div>
-
   <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
