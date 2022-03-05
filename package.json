@@ -1,49 +1,13 @@
 {
-  "name": "jeandaviddaviet",
-  "version": "3.0.0",
-  "description": "Personnal website of Jean-David Daviet",
-  "main": "src/js/index.js",
-  "dependencies": {
-    "tiny-slider": "^2.9.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
-    "@babel/preset-typescript": "^7.12.7",
-    "babel-loader": "^8.2.2",
-    "css-loader": "^5.0.1",
-    "css-minimizer-webpack-plugin": "^1.2.0",
-    "file-loader": "^6.2.0",
-    "group-css-media-queries-loader": "^3.0.2",
-    "html-loader": "^1.3.2",
-    "mini-css-extract-plugin": "^1.3.4",
-    "optimize-css-assets-webpack-plugin": "^5.0.4",
-    "prettier": "^2.2.1",
-    "sass": "^1.32.5",
-    "sass-loader": "^10.1.1",
-    "typescript": "^4.1.3",
-    "webpack": "^5.17.0",
-    "webpack-cli": "^4.4.0",
-    "webpack-fix-style-only-entries": "^0.6.1"
-  },
+  "private": true,
   "scripts": {
-    "dev": "webpack --progress --mode development",
-    "prod": "webpack --progress --mode production",
-    "watch": "webpack --progress --watch --mode production",
-    "prettier": "prettier --write src/sass/**/*.scss",
-    "phpcbf": "php vendor/bin/phpcbf *.php */*.php",
-    "eslint": "npx eslint --fix src/js",
-    "src": "npm run prettier && npm run eslint",
-    "highlight": "cd prism; npx onchange -i -k input.* -- node node.js"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JeanDavidDaviet/jeandaviddaviet.git"
-  },
-  "author": "JeanDavidDaviet",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JeanDavidDaviet/jeandaviddaviet/issues"
-  },
-  "homepage": "https://github.com/JeanDavidDaviet/jeandaviddaviet#readme"
+  "dependencies": {
+    "next": "latest",
+    "react": "17.0.2",
+    "react-dom": "17.0.2"
+  }
 }
