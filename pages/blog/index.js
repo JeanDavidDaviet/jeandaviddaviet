@@ -15,7 +15,7 @@ function Blog({ posts, categories }) {
         {posts.map((post) => (
             <article key={post.id} itemScope itemType="https://schema.org/Article" className="article-content">
                 <h2 itemProp="name">
-                    <a href="<?php the_permalink(); ?>">{post.title.rendered}</a>
+                    <a href={categories[0].slug + '/' + post.slug}>{post.title.rendered}</a>
                     <DateTime post={post} />
                 </h2>
                 {categories.map(category => <CategoryLink category={category} />)}
