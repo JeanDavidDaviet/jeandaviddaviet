@@ -1,0 +1,27 @@
+const CategoryLink = ({category}) => {
+    return category.id !== 1 ? <p className="article-dossier" key={category.id}><a href={category.slug}>{category.name}</a></p> : null;
+}
+
+const DateTime = ({post}) => {
+    const date = new Date(post.date).toLocaleDateString('fr-FR');
+    return <time dateTime="{date}" itemProp="datePublished"><small> - {date}</small></time>;
+}
+
+const PostListing = ({ posts, categories }) => {
+    return (
+      <ul>
+        {posts.map((post) => (
+            <article key={post.id} itemScope itemType="https://schema.org/Article" className="article-content">
+                <h2 itemProp="name">
+                    <a href={categories[0].slug + '/' + post.slug}>{post.title.rendered}</a>
+                    <DateTime post={post} />
+                </h2>
+                {categories.map(category => <CategoryLink category={category} />)}
+                {post.excerpt.rendered}
+          </article>
+        ))}
+      </ul>
+    )
+}
+
+export default PostListing;

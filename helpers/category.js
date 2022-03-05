@@ -18,4 +18,13 @@ export const getCategoryBySlug = async (slug) => {
     return category.length ? category[0] : null;
 }
 
+export const getCategoriesByPosts = async (posts) => {
+    let categorySet = new Set(posts.map(p => p.categories).flatMap(cat => cat));
+    const categories = [];
+    for(const categoryId of categorySet){
+        const res = await fetch('https://jeandaviddaviet.fr/wp-json/wp/v2/categories/' + categoryId)
+        const category = await res.json();
+        categories.push(category);
+    }
+    return categories;
 }
