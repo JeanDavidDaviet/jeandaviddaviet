@@ -41,12 +41,12 @@ export async function getStaticPaths() {
   const posts = await getAllPosts();
 
   const paths = await Promise.all(posts.flatMap(post => {
-    return post.categories.map( async category => {
-      let slug = await getCategoryById(category.id).slug;
-      if(slug === undefined){
-        slug = 'articles';
+    return post.categories.map( async categoryId => {
+      let category = await getCategoryById(categoryId);
+      if(category.slug === undefined){
+        category.slug = 'articles';
       }
-      return { params: { category: slug, slug: post.slug } };
+      return { params: { category: category.slug, slug: post.slug } };
     });
   }));
 
