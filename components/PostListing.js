@@ -4,13 +4,13 @@ const CategoryLink = ({category}) => {
 
 const DateTime = ({post}) => {
     const date = new Date(post.date).toLocaleDateString('fr-FR');
-    return <time dateTime="{date}" itemProp="datePublished"><small> - {date}</small></time>;
+    return <time dateTime={date} itemProp="datePublished"><small>{ ' - ' + date}</small></time>;
 }
 
 const PostListing = ({ posts, categories }) => {
     const chosenCategory = categories.find(category => category.id !== 1)
     return (
-      <ul>
+      <>
         {posts.map((post) => (
             <article key={post.id} itemScope itemType="https://schema.org/Article" className="article-content">
                 <h2 itemProp="name">
@@ -21,7 +21,7 @@ const PostListing = ({ posts, categories }) => {
                 <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}></div>
           </article>
         ))}
-      </ul>
+      </>
     )
 }
 

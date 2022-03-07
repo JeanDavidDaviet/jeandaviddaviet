@@ -1,0 +1,41 @@
+.section-homepage {
+  width: 50vw;
+
+  &:nth-child(even) {
+    .section-homepage-image {
+      order: 2;
+    }
+  }
+}
+.section-homepage-image,
+.section-homepage-content {
+  margin-bottom: 50px;
+}
+
+.section-homepage-image {
+  text-align: center;
+}
+
+.homepage-last-title {
+  margin-top: 50px;
+}
+.homepage-last-link {
+  color: var(--dark);
+  text-decoration: none;
+
+  @include hover {
+    color: var(--light-blue);
+  }
+
+  @include dark {
+    color: var(--light-gray);
+  }
+}
+
+.homepage-last-link-more {
+  color: var(--light-blue);
+
+  @include hover {
+    text-decoration: underline;
+  }
+}

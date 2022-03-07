@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+  max-width: 100%;
+  height: auto;
+}
+
+@import "../node_modules/tiny-slider/src/tiny-slider.scss";
+@import "abstracts/variables";
+
+@import "base/reset";
+@import "base/utilities";
+@import "base/typography";
+
+@import "components/catchphrase";
+@import "components/section-homepage";
+@import "components/article";
+@import "components/code";
+@import "components/button";
+@import "components/embed-video";
+@import "components/comment";
+@import "components/pagination";
+@import "components/user-navigation";
+@import "components/wpblocks";
+@import "components/testimony";
+@import "components/switchTheme";
+@import "layout/header";
+@import "layout/footer";

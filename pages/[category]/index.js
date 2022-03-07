@@ -8,6 +8,7 @@ function Blog({ posts, categories }) {
             <Header />
             <PostListing posts={posts} categories={categories} />
         </>
+    )
 }
 
 export async function getStaticProps({ params: { category } }) {

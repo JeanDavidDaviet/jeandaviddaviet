@@ -1,0 +1,68 @@
+.comments {
+  &-title {
+    border-top: 1px solid #ccc;
+    margin-top: 6rem;
+    margin-bottom: 30px;
+    padding-top: 6rem;
+  }
+
+  &-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .children {
+      list-style: none;
+    }
+  }
+
+  &-form {
+    label {
+      display: block;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    textarea {
+      border: 1px solid #d0d0d0;
+      padding: 10px 12px 8px;
+      line-height: 1;
+      max-width: 500px;
+      width: 50%;
+
+      @include dark {
+        background-color: #1c1c1c;
+        border: 1px solid #505050;
+      }
+    }
+  }
+}
+
+.comment {
+  $c: &;
+
+  &.depth-1 {
+    & > #{$c}-body {
+      background: #f2f2f2;
+    }
+  }
+
+  &-body {
+    padding: 30px;
+  }
+
+  &-author a {
+    font-weight: bold;
+    color: #25222d;
+    text-decoration: none;
+  }
+
+  &-meta a {
+    font-weight: 100;
+    text-decoration: none;
+    color: #222;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+  }
+}
