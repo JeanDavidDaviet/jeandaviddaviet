@@ -18,7 +18,7 @@ const PostListing = ({ posts, categories }) => {
                     <DateTime post={post} />
                 </h2>
                 {categories.map(category => <CategoryLink category={category} />)}
-                {post.excerpt.rendered}
+                <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}></div>
           </article>
         ))}
       </ul>

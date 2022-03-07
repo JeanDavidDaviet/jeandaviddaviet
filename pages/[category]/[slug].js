@@ -1,10 +1,10 @@
-import { getAllCategories, getCategoryById } from "../../helpers/category";
-import { getAllPosts } from "../../helpers/post";
+import { getCategoryById } from "../../helpers/category";
+import { getAllPosts, getPostCategories } from "../../helpers/post";
 
-function Blog({ post, categories }) {
+function Blog({ post }) {
   const date = new Date(post.date).toLocaleDateString('fr-FR');
   return (
-    <article itemType="https://schema.org/Article">
+    <article key={post.id} itemType="https://schema.org/Article">
         <h1 itemProp="name" className="article-title">{post.title.rendered}</h1>
         <time className="article-meta" dateTime={date} itemProp="datePublished"><small>Publié le {date} par {post.author} dans {post.categories.map((category, index) => (
           <span key={category.id}>
@@ -17,22 +17,14 @@ function Blog({ post, categories }) {
   )
 }
 
-// This function gets called at build time on server-side.
-// It won't be called on client-side, so you can even do
-// direct database queries.
 export async function getStaticProps({ params: { category, slug } }) {
   const posts = await getAllPosts();
-  const categories = await getAllCategories()
   const post = posts.filter(p => p.slug === slug)[0];
-
-  post.categories = await Promise.all(post.categories.map(async category => {
-    return await getCategoryById(category);
-  }));
+  post.categories = await getPostCategories(post.categories);
 
   return {
     props: {
-      post,
-      categories
+      post
     },
   }
 }

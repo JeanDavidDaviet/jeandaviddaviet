@@ -1,5 +1,6 @@
 import PostListing from "../../components/PostListing";
 import { getCategoriesByPosts } from "../../helpers/category";
+import { getAllPosts } from "../../helpers/post";
 
 function Blog({ posts, categories }) {
     return <PostListing posts={posts} categories={categories} />
