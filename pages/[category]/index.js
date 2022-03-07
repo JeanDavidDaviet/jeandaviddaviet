@@ -1,8 +1,13 @@
+import Header from "../../components/Header";
 import PostListing from "../../components/PostListing";
 import { getAllCategories, getCategoriesByPosts, getCategoryBySlug } from "../../helpers/category";
 
 function Blog({ posts, categories }) {
-    return <PostListing posts={posts} categories={categories} />
+    return (
+        <>
+            <Header />
+            <PostListing posts={posts} categories={categories} />
+        </>
 }
 
 export async function getStaticProps({ params: { category } }) {

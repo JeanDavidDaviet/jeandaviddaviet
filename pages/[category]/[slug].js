@@ -1,9 +1,12 @@
+import Header from "../../components/Header";
 import { getCategoryById } from "../../helpers/category";
 import { getAllPosts, getPostCategories } from "../../helpers/post";
 
 function Blog({ post }) {
   const date = new Date(post.date).toLocaleDateString('fr-FR');
   return (
+    <>
+    <Header />
     <article key={post.id} itemType="https://schema.org/Article">
         <h1 itemProp="name" className="article-title">{post.title.rendered}</h1>
         <time className="article-meta" dateTime={date} itemProp="datePublished"><small>Publié le {date} par {post.author} dans {post.categories.map((category, index) => (
@@ -14,6 +17,7 @@ function Blog({ post }) {
         ))} </small></time>
         <div className="article-content" dangerouslySetInnerHTML={{ __html: post.content.rendered }}></div>
       </article>
+    </>
   )
 }
 
