@@ -2,7 +2,7 @@ const CategoryLink = ({category}) => {
     return category.id !== 1 ? <p className="article-dossier" key={category.id}><a href={category.slug}>{category.name}</a></p> : null;
 }
 
-const DateTime = ({post}) => {
+export const DateTime = ({post}) => {
     const date = new Date(post.date).toLocaleDateString('fr-FR');
     return <time dateTime={date} itemProp="datePublished"><small>{ ' - ' + date}</small></time>;
 }
