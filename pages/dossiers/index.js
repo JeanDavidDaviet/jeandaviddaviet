@@ -5,15 +5,13 @@ function Dossiers({ categories }) {
     return (
         <>
             <Header />
-            <ul>
-                {categories.map((category) => (
+            {categories.map((category) => (
                 <article key={category.id} itemScope="" itemType="https://schema.org/Article" className="article__content">
                     <h2 itemProp="name">
                         <a href={'/' + category.slug}>{category.name}</a>
                     </h2>
                 </article>
-                ))}
-            </ul>
+            ))}
         </>
     )
 }

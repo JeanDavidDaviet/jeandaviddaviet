@@ -2,6 +2,7 @@ import { getAllCategories, getCategoriesByPosts, getCategoryBySlug } from "../..
 import { getAllPages, getPageBySlug } from "../../helpers/page";
 import Page from "../../components/Page";
 import Category from "../../components/Category";
+import { POSTS_API_URL } from "../../helpers/const";
 
 function PageOrCategory(props) {
     if(props.page !== undefined){
@@ -15,7 +16,7 @@ export async function getStaticProps({ params: { pageSlug } }) {
     const page = await getPageBySlug(pageSlug);
     if(page === undefined){
         const categoryObject = await getCategoryBySlug(pageSlug);
-        const res = await fetch('https://jeandaviddaviet.fr/wp-json/wp/v2/posts?categories=' + categoryObject.id)
+        const res = await fetch(POSTS_API_URL + '?categories=' + categoryObject.id)
         const posts = await res.json()
         const categories = await getCategoriesByPosts(posts);
 

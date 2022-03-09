@@ -1,8 +1,9 @@
 import { getCategoryById } from "./category";
+import { POSTS_API_URL } from "./const";
 
 export const getAllPosts = async () => {
-    const res = await fetch('https://jeandaviddaviet.fr/wp-json/wp/v2/posts')
-    const posts = await res.json()
+    const res = await fetch(POSTS_API_URL);
+    const posts = await res.json();
     return posts;
 }
 

@@ -17,7 +17,7 @@ const PostListing = ({ posts, categories }) => {
                     <a href={chosenCategory.slug + '/' + post.slug} dangerouslySetInnerHTML={{ __html: post.title.rendered }}></a>
                     <DateTime post={post} />
                 </h2>
-                {categories.map(category => <CategoryLink category={category} />)}
+                {categories.map(category => <CategoryLink key={category.id} category={category} />)}
                 <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}></div>
           </article>
         ))}

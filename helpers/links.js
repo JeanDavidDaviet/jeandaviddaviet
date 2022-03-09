@@ -1,5 +1,7 @@
+import { LINKS_API_URL } from "./const";
+
 export const getAllLinks = async () => {
-    const res = await fetch('https://jeandaviddaviet.fr/wp-json/wp/v2/link')
+    const res = await fetch(LINKS_API_URL)
     const links = await res.json()
     return links;
 }
