@@ -1,5 +1,5 @@
 import { getCategoryById } from "./category";
-import { POSTS_API_URL } from "./const";
+import { POSTS_API_URL, USERS_API_URL } from "./const";
 
 export const getAllPosts = async () => {
     const res = await fetch(POSTS_API_URL);

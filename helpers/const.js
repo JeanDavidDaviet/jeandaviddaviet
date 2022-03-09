@@ -7,3 +7,5 @@ export const POSTS_API_URL = API_URL + '/posts';
 export const CATEGORIES_API_URL = API_URL + '/categories';
 
 export const LINKS_API_URL = API_URL + '/link';
+
+export const USERS_API_URL = API_URL + '/users';

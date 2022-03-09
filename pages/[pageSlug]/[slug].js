@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Header from "../../components/Header";
 import { getCategoryById } from "../../helpers/category";
-import { getAllPosts, getPostCategories } from "../../helpers/post";
+import { getAllPosts, getPostAuthorName, getPostCategories } from "../../helpers/post";
 
 function Blog({ post }) {
   const date = new Date(post.date).toLocaleDateString('fr-FR');
@@ -22,10 +22,11 @@ function Blog({ post }) {
   )
 }
 
-export async function getStaticProps({ params: { pageSlug, slug } }) {
+export async function getStaticProps({ params: { slug } }) {
   const posts = await getAllPosts();
   const post = posts.filter(p => p.slug === slug)[0];
   post.categories = await getPostCategories(post.categories);
+  post.author = await getPostAuthorName(post.author);
 
   return {
     props: {
