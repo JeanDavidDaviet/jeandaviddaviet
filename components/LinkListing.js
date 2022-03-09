@@ -6,7 +6,7 @@ const LinkListing = ({ links }) => {
         {links.map((link) => (
             <article key={link.id} itemScope itemType="https://schema.org/Article" className="article-content">
                 <h2 itemProp="name">
-                    <a href={link.link} dangerouslySetInnerHTML={{ __html: link.title.rendered }}></a>
+                    <Link href={link.link}><a dangerouslySetInnerHTML={{ __html: link.title.rendered }}></a></Link>
                     <DateTime post={link} />
                 </h2>
                 <div dangerouslySetInnerHTML={{ __html: link.content.rendered }}></div>

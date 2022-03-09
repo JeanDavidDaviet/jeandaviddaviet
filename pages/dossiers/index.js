@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Header from "../../components/Header";
 import { getAllCategories } from "../../helpers/category";
 
@@ -8,7 +9,7 @@ function Dossiers({ categories }) {
             {categories.map((category) => (
                 <article key={category.id} itemScope="" itemType="https://schema.org/Article" className="article__content">
                     <h2 itemProp="name">
-                        <a href={'/' + category.slug}>{category.name}</a>
+                        <Link href={'/' + category.slug}><a>{category.name}</a></Link>
                     </h2>
                 </article>
             ))}

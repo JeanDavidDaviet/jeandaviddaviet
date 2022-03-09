@@ -12,3 +12,9 @@ export const getPostCategories = async (categoriesId) => {
     return await getCategoryById(categoryId);
   }));
 }
+
+export const getPostAuthorName = async (authorId) => {
+  const res = await fetch(USERS_API_URL + '/' + authorId);
+  const user = await res.json();
+  return user.name;
+}

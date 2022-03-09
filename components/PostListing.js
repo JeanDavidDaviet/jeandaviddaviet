@@ -1,5 +1,7 @@
+import Link from "next/link";
+
 const CategoryLink = ({category}) => {
-    return category.id !== 1 ? <p className="article-dossier" key={category.id}><a href={category.slug}>{category.name}</a></p> : null;
+    return category.id !== 1 ? <p className="article-dossier" key={category.id}><Link href={category.slug}><a>{category.name}</a></Link></p> : null;
 }
 
 export const DateTime = ({post}) => {
@@ -14,7 +16,7 @@ const PostListing = ({ posts, categories }) => {
         {posts.map((post) => (
             <article key={post.id} itemScope itemType="https://schema.org/Article" className="article-content">
                 <h2 itemProp="name">
-                    <a href={chosenCategory.slug + '/' + post.slug} dangerouslySetInnerHTML={{ __html: post.title.rendered }}></a>
+                    <Link href={chosenCategory.slug + '/' + post.slug}><a dangerouslySetInnerHTML={{ __html: post.title.rendered }}></a></Link>
                     <DateTime post={post} />
                 </h2>
                 {categories.map(category => <CategoryLink key={category.id} category={category} />)}
