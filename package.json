@@ -7,9 +7,11 @@
   },
   "dependencies": {
     "next": "latest",
+    "prop-types": "^15.8.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.49.9",
-    "tiny-slider": "^2.9.4"
+    "tiny-slider": "^2.9.4",
+    "tiny-slider-react": "^0.5.4"
   }
 }
