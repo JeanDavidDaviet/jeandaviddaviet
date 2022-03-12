@@ -1,0 +1,25 @@
+.history-revisions {
+  background-color: #f9f9f9;
+  padding: 16px;
+
+  @include dark {
+    background-color: #3e3d3d;
+  }
+}
+.history-revisions-title {
+  margin: 0 0 10px;
+}
+.history-revisions-helper {
+  margin: 0 0 10px;
+  line-height: 1.2;
+  font-size: 0.9rem;
+}
+.history-revision-link {
+  color: var(--light-blue);
+  text-decoration: none;
+  font-size: 1rem;
+
+  @include hover {
+    text-decoration: underline;
+  }
+}
