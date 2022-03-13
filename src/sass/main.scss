@@ -1,3 +1,14 @@
+:root {
+  --unit: 8px;
+  --base-font-size: 1.25rem;
+  --base-line-height: 1.6;
+
+  --dark: #333;
+  --light-blue: #439bd0;
+  --transparent-blue: #c7ddf0;
+  --light-gray: #e6e6e6;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +24,6 @@ img {
 }
 
 @import "../../node_modules/tiny-slider/src/tiny-slider.scss";
-@import "abstracts/variables";
 
 @import "base/reset";
 @import "base/utilities";
@@ -22,10 +32,6 @@ img {
 @import "components/article";
 @import "components/code";
 @import "components/button";
-@import "components/embed-video";
-@import "components/comment";
-@import "components/pagination";
 @import "components/user-navigation";
 @import "components/wpblocks";
 @import "components/testimony";
-@import "components/history.scss";

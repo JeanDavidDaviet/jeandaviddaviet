@@ -8,12 +8,12 @@ get_header(); ?>
   <div class="article-content"><?php the_content(); ?></div>
 
   <?php if(!empty($revisions)): ?>
-    <div class="history-revisions">
-      <h3 class="history-revisions-title">Remonter dans le temps :</h3>
-      <p class="history-revisions-helper">Chaque lien va mettre à jour le contenu en fonction de ce qu'il y avait à la date de mise à jour de la page.</p>
-      <ul class="list history-revisions-list">
+    <div class="bg-neutral-50 p-4 dark:bg-neutral-800">
+      <h3 class="mb-2">Remonter dans le temps :</h3>
+      <p class="mb-2 leading-5 text-sm">Chaque lien va mettre à jour le contenu en fonction de ce qu'il y avait à la date de mise à jour de la page.</p>
+      <ul>
         <?php foreach(wp_get_post_revisions() as $revision): ?>
-          <li class="history-revision-item"><a class="history-revision-link" href="<?php echo wp_nonce_url(admin_url('admin-ajax.php?action=get_page_revision&revision=' . $revision->ID), 'get_revision_' . $revision->ID); ?>"><?php echo mysql2date('d/m/Y', $revision->post_date); ?></a></li>
+          <li><a class="history-revision-link text-base text-light-blue no-underline hover:underline" href="<?php echo wp_nonce_url(admin_url('admin-ajax.php?action=get_page_revision&revision=' . $revision->ID), 'get_revision_' . $revision->ID); ?>"><?php echo mysql2date('d/m/Y', $revision->post_date); ?></a></li>
         <?php endforeach; ?>
       </ul>
 
