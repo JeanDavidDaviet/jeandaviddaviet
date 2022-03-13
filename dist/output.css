@@ -478,6 +478,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
+.absolute {
+  position: absolute;
+}
+
+.top-\[35px\] {
+  top: 35px;
+}
+
+.right-\[35px\] {
+  right: 35px;
+}
+
 .float-left {
   float: left;
 }
@@ -519,12 +531,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: block;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-12 {
   height: 3rem;
 }
 
 .w-12 {
   width: 3rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .bg-transparent-blue {
@@ -536,13 +556,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1.25rem;
 }
 
-.p-4 {
-  padding: 1rem;
-}
-
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-sm {
@@ -555,17 +576,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   line-height: 2rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.font-bold {
+  font-weight: 700;
 }
 
 .font-light {
   font-weight: 300;
-}
-
-.font-bold {
-  font-weight: 700;
 }
 
 .leading-6 {
@@ -595,6 +611,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 150ms;
 }
 
+.admin-bar .switch-theme {
+  top: 80px;
+}
+
+@media (min-width: 783px){
+  .admin-bar .switch-theme {
+    top: 66px;
+  }
+}
+
 .hover\:text-light-blue:hover {
   --tw-text-opacity: 1;
   color: rgb(67 155 208 / var(--tw-text-opacity));
@@ -603,6 +629,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.dark .dark\:block {
+  display: block;
+}
+
+.dark .dark\:hidden {
+  display: none;
 }
 
 .dark .dark\:bg-transparent-blue-dark {
