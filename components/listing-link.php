@@ -2,7 +2,7 @@
 
   <article itemscope itemtype="https://schema.org/Article" class="article-content">
     <h2 itemprop="name">
-    	<a href="<?php the_field('link'); ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a>
+    	<a class="font-bold" href="<?php the_field('link'); ?>" target="_blank" rel="noopener noreferrer"><?php the_title(); ?></a>
     	<time datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop="datePublished"><small> - <?php echo get_the_date('d/m/Y'); ?></small></time>
     </h2>
     <?php the_content(); ?>
