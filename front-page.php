@@ -18,24 +18,8 @@
   </div>
   <?php endif; ?>
 
-  <?php $articles = new WP_Query(['post_type' => 'post', 'posts_per_page' => 3, 'category__not_in' => array( 22, 62 ) ]); if ( $articles->have_posts() ) : ?>
-  <div class="mt-12">
-    <h3 class="homepage-last-title"><?php _e("Les derniers articles", "jdd"); ?></h3>
-    <?php while ( $articles->have_posts() ) : $articles->the_post(); ?>
-    <p><a class="homepage-last-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-    <?php endwhile; ?>
-    <p><a class="homepage-last-link-more" href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e("Plus d'articles", "jdd"); ?></a></p>
-  </div>
-  <?php endif; ?>
+<?php get_template_part('components/last_articles'); ?>
 
-  <?php $dossiers = get_categories(array('exclude' => array(1 /* Articles */ , 22 /* News */))); if( !empty($dossiers) ) : ?>
-  <div class="mt-12">
-    <h3 class="homepage-last-title"><?php _e("Les derniers dossiers", "jdd"); ?></h3>
-    <?php foreach($dossiers as $dossier): ?>
-    <p><a class="homepage-last-link" href="<?php echo get_category_link($dossier->term_id); ?>"><?php echo $dossier->name; ?></a></p>
-    <?php endforeach; ?>
-    <p><a href="<?php echo home_url('/dossiers'); ?>" class="homepage-last-link-more"><?php _e("Plus de dossiers", "jdd"); ?></a></p>
-  </div>
-  <?php endif; ?>
+<?php get_template_part('components/last_dossiers'); ?>
 
 <?php get_footer(); ?>
