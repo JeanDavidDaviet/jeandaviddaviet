@@ -151,12 +151,6 @@
   right: 0;
 }
 
-%dark_scheme_color {
-  @include dark {
-    color: var(--light-gray);
-  }
-}
-
 .animated {
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;

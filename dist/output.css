@@ -535,12 +535,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .h-12 {
   height: 3rem;
 }
 
 .w-12 {
   width: 3rem;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .cursor-pointer {
@@ -697,6 +705,14 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-right: 1.25rem;
   }
 
+  .xs\:mr-8 {
+    margin-right: 2rem;
+  }
+
+  .xs\:inline-block {
+    display: inline-block;
+  }
+
   .xs\:flex {
     display: flex;
   }
@@ -716,5 +732,15 @@ Ensure the default browser behavior of the `hidden` attribute.
   .xs\:text-lg {
     font-size: 1.125rem;
     line-height: 1.75rem;
+  }
+}
+
+@media (max-width: 459px) {
+  .max-xs\:items-center {
+    align-items: center;
+  }
+
+  .max-xs\:justify-end {
+    justify-content: flex-end;
   }
 }
