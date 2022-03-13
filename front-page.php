@@ -1,16 +1,6 @@
 <?php get_header(); ?>
 
-  <div class="catchphrase col-md-8 col-md-offset-2 col-sm-6 col-sm-offset-3">
-    <picture class="catchphrase-picture">
-      <source type="image/avif" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/jd.avif" alt="">
-      <source type="image/webp" srcset="<?php echo get_template_directory_uri(); ?>/dist/img/jd.webp" alt="">
-      <img class="catchphrase-image" src="<?php echo get_template_directory_uri(); ?>/dist/img/jd.png" alt="">
-    </picture>
-    <blockquote class="catchphrase-quote">
-      <p class="catchphrase-text"><?php _e("J'aide les organisations de petites et moyennes tailles à développer leur projets internets.", "jdd"); ?></p>
-      <p class="catchphrase-author reveal">– <?php _e("Jean-David Daviet", "jdd"); ?></p>
-    </blockquote>
-  </div>
+<?php get_template_part('components/catchphrase'); ?>
 
   <?php $testimonies = new WP_Query(['post_type' => 'temoignage', 'posts_per_page' => 2, 'order' => 'ASC']); if ( $testimonies->have_posts() ) : ?>
   <div class="testimonies">
@@ -29,7 +19,7 @@
   <?php endif; ?>
 
   <?php $articles = new WP_Query(['post_type' => 'post', 'posts_per_page' => 3, 'category__not_in' => array( 22, 62 ) ]); if ( $articles->have_posts() ) : ?>
-  <div class="homepage-last">
+  <div class="mt-12">
     <h3 class="homepage-last-title"><?php _e("Les derniers articles", "jdd"); ?></h3>
     <?php while ( $articles->have_posts() ) : $articles->the_post(); ?>
     <p><a class="homepage-last-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
@@ -39,7 +29,7 @@
   <?php endif; ?>
 
   <?php $dossiers = get_categories(array('exclude' => array(1 /* Articles */ , 22 /* News */))); if( !empty($dossiers) ) : ?>
-  <div class="homepage-last">
+  <div class="mt-12">
     <h3 class="homepage-last-title"><?php _e("Les derniers dossiers", "jdd"); ?></h3>
     <?php foreach($dossiers as $dossier): ?>
     <p><a class="homepage-last-link" href="<?php echo get_category_link($dossier->term_id); ?>"><?php echo $dossier->name; ?></a></p>
