@@ -50,28 +50,6 @@ function testimony_cpt() {
 }
 add_action( 'init', 'testimony_cpt' );
 
-function etude_cpt() {
-  $args = array(
-    'public' => true,
-    'label'  => 'Etudes',
-    'show_in_rest' => true,
-    'supports' => array( 'title', 'editor')
-  );
-  register_post_type( 'etude', $args );
-}
-add_action( 'init', 'etude_cpt' );
-
-function portfolio_cpt() {
-  $args = array(
-    'public' => true,
-    'label'  => 'Portfolio',
-    'show_in_rest' => true,
-    'supports' => array( 'title', 'editor', 'thumbnail')
-  );
-  register_post_type( 'portfolio', $args );
-}
-add_action( 'init', 'portfolio_cpt' );
-
 function link_cpt() {
     $args = array(
       'public' => true,
@@ -84,17 +62,3 @@ function link_cpt() {
     register_post_type( 'link', $args );
 }
 add_action( 'init', 'link_cpt' );
-
-function projet_init() {
-  register_taxonomy(
-    'projet',
-    'portfolio',
-    array(
-      'label' => __( 'Projet' ),
-      'rewrite' => array( 'slug' => 'projet' ),
-      'show_in_rest' => true,
-      'hierarchical' => true
-    )
-  );
-}
-add_action( 'init', 'projet_init' );
