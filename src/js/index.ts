@@ -6,11 +6,9 @@ document.querySelector('.switch-theme')?.addEventListener('click', () => {
 });
 
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js', { scope: '/' }).then(function(reg) {
-    // registration worked
-    // console.log('Registration succeeded. Scope is ' + reg.scope);
+  navigator.serviceWorker.register(urls.theme + '/sw.js', { scope: '/' }).then(function(reg) {
+    console.log('Registration succeeded. Scope is ' + reg.scope);
   }).catch(function(error) {
-    // registration failed
-    // console.log('Registration failed with ' + error);
+    console.log('Registration failed with ' + error);
   });
 };
