@@ -44,10 +44,10 @@ function jce_remove_attachment_comments( $open, $post_id ) {
 add_filter( 'comments_open', 'jce_remove_attachment_comments', 10 , 2 );
 
 function add_theme_scripts() {
-  wp_enqueue_script( 'jquery' );
   wp_dequeue_style( 'wp-block-library' );
   wp_enqueue_style( 'style', get_template_directory_uri() . "/dist/css/main.min.css", [], filemtime(get_template_directory() . "/dist/css/main.min.css"));
   wp_enqueue_script( 'script', get_template_directory_uri() . "/dist/js/main.min.js", [], filemtime(get_template_directory() . "/dist/js/main.min.js"), true);
+  wp_localize_script('script', 'urls', ['theme' => get_stylesheet_directory_uri()]);
 }
 add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 
@@ -70,3 +70,10 @@ function get_page_revision(){
     }
   }
 }
+
+function sgb_external_scripts() {
+  if( is_admin() ){
+    wp_enqueue_script( 'gutenberg-share', get_template_directory_uri() . "/dist/js/gutenberg-share.min.js", [  'wp-data', 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n', 'jquery' ], filemtime(get_template_directory() . "/dist/js/gutenberg-share.min.js"), true);
+  }
+ }
+ add_action( 'enqueue_block_assets', 'sgb_external_scripts' );

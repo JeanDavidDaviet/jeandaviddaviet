@@ -6,6 +6,9 @@ const jsConfig = {
     main: [
       './src/js/index',
     ],
+    "gutenberg-share": [
+      './src/js/gutenberg-share',
+    ],
   },
   devtool: false,
   output: {
