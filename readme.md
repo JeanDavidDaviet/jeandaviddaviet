@@ -6,17 +6,18 @@ C'est un thème WordPress fait sur mesure et qui a pour but d'évoluer dans le t
 Je ne cherche pas à faire le plus beau code, mais juste d'aller au plus simple et de faire un site qui marche.
 
 # Choses à faire
+- [ ] Ajouter les années en sticky sur la page blog
 - [ ] Menu avec depth > 0
 - [ ] Liens reseaux sociaux (tw,gh,li)
 - [ ] Page use / mes outils
 - [ ] Mettre plus d'interactivite / ( exp webgl ? )
 - [ ] A propos / contribs / ...
 - [ ] Webmentions
-- [ ] Ajouter un indicateur de date dépassé pour les vieux articles
 - [ ] Ajouter un bouton vers le flux RSS
 - [ ] Rendre plus facile l'insertion de code avec syntax highlighting
 
 ## Fait
+- [x] Ajouter un indicateur de date dépassé pour les vieux articles
 - [x] Utiliser et mettre à jour Webpack pour les assets
 - [x] Icone pour switcher de dark/light
 - [x] Retravailler l'accroche de la homepage

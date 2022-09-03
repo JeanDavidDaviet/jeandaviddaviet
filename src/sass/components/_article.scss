@@ -75,3 +75,10 @@ article {
     text-decoration: none;
   }
 }
+.article-outdated {
+  margin: 0 0 16px;
+  background: var(--light-blue);
+  padding: 10px;
+  font-size: 0.9rem;
+  color: white;
+}
