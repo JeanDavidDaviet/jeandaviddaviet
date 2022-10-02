@@ -1,21 +1,15 @@
 name: deploy
 
-# Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the "master" branch
-  push:
-    branches: [ "master" ]
-
-  # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   web-deploy:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-versions: [ '18' ]
     steps:
     - name: 🚚 Get latest code
       uses: actions/checkout@v3
@@ -23,7 +17,7 @@ jobs:
     - name: Use Node.js ${{ matrix.node-versions }}
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-versions }}
+        node-version: latest
 
     - name: Get npm cache directory
       id: npm-cache-dir
@@ -42,7 +36,7 @@ jobs:
       run: |
         npm ci
         npm run prod
-    
+
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.0
       with:
