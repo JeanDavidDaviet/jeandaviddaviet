@@ -1,7 +1,7 @@
 <?php if(have_posts()): while(have_posts()): the_post(); ?>
 
-  <article itemscope itemtype="https://schema.org/Article" class="article-content">
-    <h2 itemprop="name">
+  <article class="article-list-item">
+    <h2 class="article-list-title">
     	<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
     	<time datetime="<?php echo get_the_date('Y-m-d'); ?>" itemprop="datePublished"><small> - <?php echo get_the_date('d/m/Y'); ?></small></time>
     </h2>

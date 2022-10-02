@@ -47,20 +47,11 @@ article {
   .article-content > ul,
   .article-content > ol {
     box-sizing: border-box;
-    list-style: none;
     position: relative;
-    padding-left: 20px;
   }
   li + li {
     line-height: 1.8;
     margin-top: 20px;
-  }
-}
-
-.article-content {
-  .article-dossier {
-    margin-top: -15px;
-    font-size: 1rem;
   }
 }
 

@@ -2,12 +2,7 @@
   box-sizing: border-box;
 }
 
-html, body {
-  overflow-x: hidden;
-}
-
 img {
-  image-rendering: -webkit-optimize-contrast;
   max-width: 100%;
   height: auto;
 }
