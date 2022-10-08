@@ -4,6 +4,7 @@
   margin-bottom: 50px;
 
   @include dark {
+    background: var(--dark-transparent-blue);
     background: rgba(74, 124, 154, 0.3);
   }
 

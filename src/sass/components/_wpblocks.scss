@@ -46,7 +46,11 @@
 .wp-block-quote {
   margin: 0;
   padding: 0 0 0 20px;
-  border-left: 2px solid #439bcf;
+  border-left: 2px solid var(--transparent-blue);
+
+  @include dark {
+    border-left-color: var(--dark-transparent-blue);
+  }
 }
 .wp-block-code,
 .code-block {

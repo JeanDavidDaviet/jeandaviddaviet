@@ -49,6 +49,10 @@
   fill: white;
   pointer-events: all;
 
+  @include dark {
+    background: var(--dark-transparent-blue);
+  }
+
   &:focus {
     outline: auto;
   }

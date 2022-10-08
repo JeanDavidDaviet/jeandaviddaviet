@@ -1,0 +1,50 @@
+.secondary-navbar {
+  position: fixed;
+  left: 0;
+  background: white;
+  box-shadow: 0 0 14px 4px rgba(199, 221, 240, .2);
+  top: 0;
+  bottom: 0;
+  max-width: clamp(min(300px, 90vw), 30%, 600px);
+  width: 100%;
+  z-index: 2;
+  transition: transform .3s;
+  transform: translateX(-100%);
+
+  @include dark {
+    background: var(--dark-transparent-blue);
+    box-shadow: 0 0 14px 4px rgba(58, 74, 84, .2);
+  }
+
+  .toggle-menu & {
+    transform: translateX(0);
+  }
+
+  .navbar-list {
+    margin: 60px 0 20px;
+    padding: 0 36px;
+    list-style: none;
+  }
+  .navbar-item:last-child {
+    margin-top: 36px;
+  }
+}
+
+.secondary-navbar-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: var(--dark);
+  text-decoration: none;
+  border: none;
+  background: none;
+  padding: 18px 22px;
+  cursor: pointer;
+  transition: color .3s ease;
+
+  @extend %dark_scheme_color;
+
+  @include hover {
+    color: var(--light-blue);
+  }
+}

@@ -54,7 +54,8 @@ add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
 add_action( 'init', 'pm_register_my_menu' );
 function pm_register_my_menu() {
     register_nav_menus( array(
-        'primary' => 'Menu Principal'
+        'primary' => 'Menu Principal',
+        'secondary' => 'Menu Secondaire',
     ) );
 }
 
