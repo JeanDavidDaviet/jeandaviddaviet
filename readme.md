@@ -13,10 +13,10 @@ Je ne cherche pas à faire le plus beau code, mais juste d'aller au plus simple 
 - [ ] Mettre plus d'interactivite / ( exp webgl ? )
 - [ ] A propos / contribs / ...
 - [ ] Webmentions
-- [ ] Ajouter un bouton vers le flux RSS
 - [ ] Rendre plus facile l'insertion de code avec syntax highlighting
 
 ## Fait
+- [x] Ajouter un bouton vers le flux RSS
 - [x] Ajouter un indicateur de date dépassé pour les vieux articles
 - [x] Utiliser et mettre à jour Webpack pour les assets
 - [x] Icone pour switcher de dark/light

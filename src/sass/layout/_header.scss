@@ -3,6 +3,15 @@
 }
 .header-title {
   line-height: var(--base-line-height);
+  max-width: 160px;
+
+  @media (min-width: 320px) {
+    max-width: 200px;
+  }
+
+  @media (min-width: 440px) {
+    max-width: none;
+  }
 }
 .header-title-link {
   display: block;
@@ -10,8 +19,9 @@
   text-decoration: none;
   transition: color 0.3s ease;
   font-size: 2rem;
-  padding: 15px 0;
+  padding: 20px 0;
   font-weight: bold;
+  line-height: 1;
 
   @extend %dark_scheme_color;
 

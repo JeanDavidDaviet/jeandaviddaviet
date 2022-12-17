@@ -1,0 +1,17 @@
+.rss {
+  position: absolute;
+  top: 30px;
+  right: 35px;
+
+  .admin-bar & {
+    top: 75px;
+
+    @media (min-width: 783px){
+      top: 61px;
+    }
+  }
+}
+.rss-link {
+  display: block;
+  line-height: 16px;
+}
