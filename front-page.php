@@ -29,13 +29,23 @@
   <?php endif; ?>
 
   <?php $articles = new WP_Query(['post_type' => 'post', 'posts_per_page' => 3, 'category__not_in' => array( 22, 62 ) ]); if ( $articles->have_posts() ) : ?>
-  <div class="homepage-last">
-    <h3 class="homepage-last-title"><?php _e("Les derniers articles", "jdd"); ?></h3>
-    <?php while ( $articles->have_posts() ) : $articles->the_post(); ?>
-    <p><a class="homepage-last-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-    <?php endwhile; ?>
-    <p><a class="homepage-last-link-more" href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e("Plus d'articles", "jdd"); ?></a></p>
-  </div>
+    <div class="homepage-last">
+      <h3 class="homepage-last-title"><?php _e("Les derniers articles", "jdd"); ?></h3>
+      <?php while ( $articles->have_posts() ) : $articles->the_post(); ?>
+        <p><a class="homepage-last-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+      <?php endwhile; ?>
+      <p><a class="homepage-last-link-more" href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e("Plus d'articles", "jdd"); ?></a></p>
+    </div>
+  <?php endif; ?>
+
+  <?php $links = new WP_Query(['post_type' => 'link', 'posts_per_page' => 3]); if ( $links->have_posts() ) : ?>
+    <div class="homepage-last">
+      <h3 class="homepage-last-title"><?php _e("Les derniers liens", "jdd"); ?></h3>
+      <?php while ( $links->have_posts() ) : $links->the_post(); ?>
+        <p><a class="homepage-last-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+      <?php endwhile; ?>
+      <p><a class="homepage-last-link-more" href="/liens"><?php _e("Plus de liens", "jdd"); ?></a></p>
+    </div>
   <?php endif; ?>
 
   <?php $dossiers = get_categories(array('exclude' => array(1 /* Articles */ , 22 /* News */))); if( !empty($dossiers) ) : ?>
