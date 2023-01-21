@@ -32,24 +32,13 @@
       <a href="/feed" class="rss-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16"><path d="M0 64a32 32 0 0 1 32-32 416 416 0 0 1 416 416 32 32 0 1 1-64 0A352 352 0 0 0 32 96 32 32 0 0 1 0 64zm128 352a64 64 0 1 1-128.1-.1 64 64 0 0 1 128.1.1zM32 160a288 288 0 0 1 288 288 32 32 0 1 1-64 0A224 224 0 0 0 32 224a32 32 0 1 1 0-64z"/></svg></a>
     </div>
     <header class="header">
-      <?php $hasSecondaryMenu = wp_get_nav_menu_items(get_nav_menu_locations()['secondary']); ?>
       <?php if(is_front_page()): ?><h1 class="header-title"><?php endif; ?><a href="<?php echo home_url(); ?>" class="header-title-link"><?php _e("Jean-David Daviet", "jdd"); ?></a><?php if(is_front_page()): ?></h1><?php endif; ?>
       <?php wp_nav_menu([
         'menu'              => 'primary',
         'theme_location'    => 'primary',
         'container'         => 'nav',
         'container_class'   => 'navbar',
-        'items_wrap'        => '<ul class="navbar-list">%3$s' . ( $hasSecondaryMenu ? '<li class="navbar-item"><button class="navbar-link" data-js="toggle-menu">Plus&hellip;</button>' : '' ) . '</li></ul>',
+        'items_wrap'        => '<ul class="navbar-list">%3$s</ul>',
         'walker'            => new Jdd_Menu_Walker()
       ]); ?>
     </header>
-    <?php if($hasSecondaryMenu):
-      wp_nav_menu([
-        'menu'              => 'secondary',
-        'theme_location'    => 'secondary',
-        'container'         => 'nav',
-        'container_class'   => 'secondary-navbar',
-        'items_wrap'        => '<button class="secondary-navbar-close" data-js="toggle-menu">&#10006;</button><ul class="secondary-navbar-list navbar-list">%3$s<li class="navbar-item"><button class="secondary-navbar-link navbar-link" data-js="toggle-menu">Fermer le menu</button></li></ul>',
-        'walker'            => new Jdd_Menu_Walker()
-      ]);
-    endif; ?>
