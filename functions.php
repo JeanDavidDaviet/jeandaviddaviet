@@ -82,3 +82,12 @@ function sgb_external_scripts() {
   }
  }
  add_action( 'enqueue_block_assets', 'sgb_external_scripts' );
+
+add_filter( 'wpseo_robots', 'yoast_seo_robots_remove_single' );
+function yoast_seo_robots_remove_single( $robots ) {
+  if ( is_singular ( 'link' ) ) {
+    return false;
+  } else {
+    return $robots;
+  }
+}

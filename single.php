@@ -8,6 +8,9 @@
         <?php if(get_post_type() === 'post' && time() - get_the_date('U') > YEAR_IN_SECONDS * 2): ?>
           <p class="article-outdated">Cet article a plus de <?php echo floor((time() - get_the_date('U')) / YEAR_IN_SECONDS); ?> ans et il se peut que son contenu ne soit plus à jour.</p>
         <?php endif; ?>
+        <?php if(get_post_type() === 'link'): ?>
+          <p><a href="<?php the_field('link'); ?>" target="_blank" rel="noopener noreferrer"><?php the_field('link'); ?></a></p>
+        <?php endif; ?>
         <div class="article-content"><?php the_content(); ?></div>
       </article>
 
