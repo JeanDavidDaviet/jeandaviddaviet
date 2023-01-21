@@ -34,6 +34,11 @@ function filter_ptags_on_images($content){
 }
 add_filter('the_content', 'filter_ptags_on_images');
 
+function set_excerpt_length( $length ) {
+  return 20;
+}
+add_filter('excerpt_length', 'set_excerpt_length');
+
 function jce_remove_attachment_comments( $open, $post_id ) {
   $post = get_post( $post_id );
   if ( 'attachment' == $post->post_type ) {

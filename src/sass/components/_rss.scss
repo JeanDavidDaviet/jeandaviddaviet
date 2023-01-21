@@ -14,4 +14,8 @@
 .rss-link {
   display: block;
   line-height: 16px;
+
+  @include dark {
+    fill: var(--light-gray);
+  }
 }
