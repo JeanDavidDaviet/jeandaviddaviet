@@ -16,7 +16,7 @@
     "file-loader": "^6.2.0",
     "group-css-media-queries-loader": "^4.3.0",
     "html-loader": "^4.1.0",
-    "mini-css-extract-plugin": "^2.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
     "patch-package": "^6.5.1",
     "prettier": "^2.8.4",
     "sass": "^1.59.3",
