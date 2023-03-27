@@ -22,7 +22,7 @@
     "sass": "^1.60.0",
     "sass-loader": "^13.2.1",
     "typescript": "^5.0.2",
-    "webpack": "^5.76.2",
+    "webpack": "^5.76.3",
     "webpack-cli": "^5.0.1",
     "webpack-fix-style-only-entries": "^0.6.1"
   },
