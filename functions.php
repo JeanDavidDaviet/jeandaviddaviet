@@ -91,3 +91,9 @@ function yoast_seo_robots_remove_single( $robots ) {
     return $robots;
   }
 }
+
+add_filter( 'mkaz_code_syntax_language_list', function( $languages ) {
+  return array_merge($languages, array(
+    'diff' => 'Diff'
+  ));
+} );
