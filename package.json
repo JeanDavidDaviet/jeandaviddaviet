@@ -12,7 +12,7 @@
     "@babel/preset-typescript": "^7.21.0",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.7.3",
-    "css-minimizer-webpack-plugin": "^4.2.2",
+    "css-minimizer-webpack-plugin": "^5.0.0",
     "file-loader": "^6.2.0",
     "group-css-media-queries-loader": "^4.3.0",
     "html-loader": "^4.1.0",
