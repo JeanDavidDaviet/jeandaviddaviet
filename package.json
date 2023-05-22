@@ -11,7 +11,7 @@
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-typescript": "^7.21.5",
     "babel-loader": "^9.1.2",
-    "css-loader": "^6.7.3",
+    "css-loader": "^6.7.4",
     "css-minimizer-webpack-plugin": "^5.0.0",
     "file-loader": "^6.2.0",
     "group-css-media-queries-loader": "^4.3.0",
