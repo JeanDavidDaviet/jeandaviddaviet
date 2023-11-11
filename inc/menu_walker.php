@@ -17,6 +17,7 @@ class Jdd_Menu_Walker extends Walker
 
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 )
     {
+
         $output .= '<li class="navbar-item">';
 
         $atts = array();
@@ -39,11 +40,11 @@ class Jdd_Menu_Walker extends Walker
 
         $title = apply_filters('nav_menu_item_title', $title, $item, $args, $depth);
 
-        $item_output = $args['before'];
+        $item_output = $args->before;
         $item_output .= '<a class="navbar-link"'. $attributes .'>';
-        $item_output .= $args['link_before'] . $title . $args['link_after'];
+        $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
-        $item_output .= $args['after'];
+        $item_output .= $args->after;
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
